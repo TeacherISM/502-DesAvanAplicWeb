@@ -2,6 +2,8 @@
 
 
 ## A01783808: Diego Abdo Velásquez. (Full Stack)
+## A01783704: nicolas alarcon panopoulou
+## (BD/BACKEND)
 
 
 
