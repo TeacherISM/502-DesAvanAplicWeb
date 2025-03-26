@@ -1,5 +1,5 @@
 # 502-DesAvanAplicWeb
 
-## Emily, Rosenfeld Eluani (JEFA DE FRONTEND)
+## A01198339: Emily, Rosenfeld Eluani (JEFA_DE_FRONTEND)
 
 502 - Desarrollo Avanzado de Aplicaciones Web
