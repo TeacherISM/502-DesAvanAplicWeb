@@ -1,6 +1,6 @@
 # 502-DesAvanAplicWeb
 
-## Tomas Molina Perez Diez
-## Jefe de Base de Datos/Backend
+## Emily Rosenfeld Eluani
+## Jefa de Frontend
 
 502 - Desarrollo Avanzado de Aplicaciones Web
