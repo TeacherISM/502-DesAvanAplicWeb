@@ -2,4 +2,6 @@
 502 - Desarrollo Avanzado de Aplicaciones Web
 
 
-emiliano, romero lópez (BDD/BACKEND)
+a01028415: emiliano, romero lópez 
+
+(BDD_/_BACKEND)
