@@ -1,6 +1,7 @@
 # 502-DesAvanAplicWeb
 
 ## Tomas Molina Perez Diez
+
 ## Jefe de Base de Datos/Backend
 ## Imanol Santisteban(DevOps/BackEnd)
 ## Nicolas Alarcon Panopoulou (DB/Backend)
@@ -8,5 +9,9 @@
 ## Paul Araque Fernandez (DB/Backend)
 ## Gabriel, Edid Harari (Full-Stack)
 
+
+## Emilio Ramirez Mascarua
+
+## DevOps / FullStack frontend
 
 502 - Desarrollo Avanzado de Aplicaciones Web
