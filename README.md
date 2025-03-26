@@ -1,6 +1,5 @@
 # 502-DesAvanAplicWeb
 
-## Jooseph Shakalo
-## Frontend developer
+##Joseph Shakalo Paz (DevOps/Frontend)
 
 502 - Desarrollo Avanzado de Aplicaciones Web
