@@ -5,7 +5,7 @@
 ## Imanol Santisteban(DevOps/BackEnd)
 ## Nicolas Alarcon Panopoulou (DB/Backend)
 ## Alberto Limón Cancino (DB/Backend)
-## Remy, Patgher Aguilar (Project Manager )
+## A01784177: Remy, Patgher Aguilar (Project Manager)
 
 
 502 - Desarrollo Avanzado de Aplicaciones Web
