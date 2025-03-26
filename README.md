@@ -2,4 +2,4 @@
 502 - Desarrollo Avanzado de Aplicaciones Web
 
 
-Emiliano Romero (BDD/Backend)
+emiliano, romero lópez (BDD/BACKEND)
