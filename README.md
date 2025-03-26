@@ -1,5 +1,5 @@
 # 502-DesAvanAplicWeb
 
-## Emily, Rosenfeld Eluani (Jefa de Frontend)
+## Emily, Rosenfeld Eluani (JEFA DE FRONTEND)
 
 502 - Desarrollo Avanzado de Aplicaciones Web
