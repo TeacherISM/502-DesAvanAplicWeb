@@ -4,8 +4,6 @@
 
 ## Jefe de Base de Datos/Backend
 
-## Emilio , Ramirez Mascarua
-
-## DevOps / FullStack frontend
+## A01783980: Emilio, Ramirez (DevOps_FullStack_frontend)
 
 502 - Desarrollo Avanzado de Aplicaciones Web
