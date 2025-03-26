@@ -5,7 +5,7 @@
 ## Imanol Santisteban(DevOps/BackEnd)
 ## Nicolas Alarcon Panopoulou (DB/Backend)
 ## Alberto Limón Cancino (DB/Backend)
-## Paul Araque Fernandez (DB/Backend)
+## Paul, Araque Fernandez (DB/Backend)
 
 
 502 - Desarrollo Avanzado de Aplicaciones Web
