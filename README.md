@@ -2,7 +2,7 @@
 
 ## Tomas, Molina Perez Diez (Jefe DB/Backend)
 ## Imanol Santisteban(DevOps/BackEnd)
-## Nicolas Alarcon Panopoulou (DB/Backend)
+## A01783704: nicolas alarcon panopoulou (DB/BACKEND)
 ## Alberto Limón Cancino (DB/Backend)
 ## Paul Araque Fernandez (DB/Backend)
 ## Gabriel, Edid Harari (Full-Stack)
