@@ -1,7 +1,12 @@
 # 502-DesAvanAplicWeb
 
-## Tomas Molina Perez Diez
-## Jefe de Base de Datos/Backend
+
+## A01783808: Diego Abdo Velásquez. (Full Stack)
+
+
+
+## A01028786:Francisco, Urquizo (PROJECT_MANAGER)
+## Project Manager
 
 ### A01782876: marcos, dayan mann
 DEVOPS/BACKEND
