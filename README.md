@@ -8,4 +8,7 @@
 ## A01028786:Francisco, Urquizo (PROJECT_MANAGER)
 ## Project Manager
 
+### A01782876: marcos, dayan mann
+DEVOPS/BACKEND
+
 502 - Desarrollo Avanzado de Aplicaciones Web
