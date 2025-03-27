@@ -1,5 +1,6 @@
 # 502-DesAvanAplicWeb
 
+## A01782876: marcos, dayan mann (backend/devops)
 
 ## A01783808: Diego Abdo Velásquez. (Full Stack)
 
