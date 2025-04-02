@@ -1,7 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Class1 from "./class1/class1";
+import Class1 from "./class1/Class1";
 
 function App() {
   return (
