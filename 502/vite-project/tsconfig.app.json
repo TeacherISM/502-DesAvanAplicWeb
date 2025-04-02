@@ -22,9 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-<<<<<<< HEAD
-  "include": ["src", "src/clase1"]
-=======
   "include": ["src"]
->>>>>>> upstream/main
 }
