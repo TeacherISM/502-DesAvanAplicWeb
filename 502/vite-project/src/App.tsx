@@ -5,6 +5,7 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [showIframe, setShowIframe] = useState(false)
 
   return (
     <>
@@ -28,7 +29,23 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <p>
+        <a href="/class1/A01028415/index.html" target="_blank" rel="noopener noreferrer">
+          Ir a index.html en class1
+        </a>
+      </p>
+      <>
+      <button onClick={() => setShowIframe(true)}>Ver índice</button>
+      {showIframe && (
+        <iframe
+          src="/class1/index.html"
+          style={{ width: '100%', height: '600px', border: 'none' }}
+          title="Class1 Index"
+        />
+      )}
     </>
+    </>
+    
   )
 }
 
