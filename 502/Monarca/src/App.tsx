@@ -25,14 +25,6 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-
-      {/* Aquí está el nuevo botón */}
-      <div className="card">
-        <a href="/class1/index.html" target="_blank">
-          <button>Ir a class1/index.html</button>
-        </a>
-      </div>
-
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
