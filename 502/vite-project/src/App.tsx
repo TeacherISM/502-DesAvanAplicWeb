@@ -1,7 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Class1 from "./class1/class1";
+import Class1 from "./class1/A01782876/class1";
 
 function App() {
   return (
@@ -16,7 +16,6 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div>
-        <h2>Class 1</h2>
         <Class1 />
       </div>
     </>

@@ -1,4 +1,4 @@
-import { greetEs6, greetTraditional } from "./practice_activity_1.ts";
+import { greetEs6, greetTraditional } from "./practice_activity_1";
 
 const Class1 = () => {
   const user = {
