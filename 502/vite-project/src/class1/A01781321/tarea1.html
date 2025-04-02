@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function en Botón</title>
+    <style>
+        #miBoton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón que usará la arrow function -->
+    <button id="miBoton">Haz clic</button>
+
+    <script>
+        // Arrow function (ES6+) que cambia el botón
+        const cambiarBoton = () => {
+            const boton = document.getElementById('miBoton');
+            
+            // Cambiamos propiedades del botón
+            boton.textContent = '¡Funcionó!';
+            boton.style.backgroundColor = '#f44336'; // Rojo
+            
+            // Opcional: Resetear después de 2 segundos
+            setTimeout(() => {
+                boton.textContent = 'Haz clic';
+                boton.style.backgroundColor = '#4CAF50';
+            }, 2000);
+        };
+
+        // Asignamos la función al evento "click"
+        document.getElementById('miBoton').addEventListener('click', cambiarBoton);
+    </script>
+</body>
+</html>
