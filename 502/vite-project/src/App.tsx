@@ -1,7 +1,6 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Class1 from "./class1/A01782876/class1";
 
 function App() {
   return (
@@ -15,8 +14,10 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+
       <div>
-        <Class1 />
+        <h2>Links Clases Marcos Dayan A01782876</h2>
+        <a href="/src/class1/A01782876/index.html">Ir a la clase 1</a>
       </div>
     </>
   );
