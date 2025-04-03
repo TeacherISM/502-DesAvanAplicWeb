@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Login from "./class2/A01027626/Login";
+import TravelRequestForm from "./class3/A01027626/TravelRequestForm";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,6 +31,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <Login />
+      <TravelRequestForm />
     </>
   );
 }
