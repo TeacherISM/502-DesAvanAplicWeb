@@ -1,8 +1,7 @@
-// src/components/ES6Features.tsx
+
 
 import { useState } from 'react'
 
-// Módulo simulado: mathUtils (Modules + Arrow Functions)
 const mathUtils = {
   add: (a: number, b: number) => {
     console.log(`Se realizó una suma: ${a} + ${b}`)
@@ -14,25 +13,22 @@ const mathUtils = {
   },
 }
 
-// Problema del `this` con Arrow Functions (Resuelto)
 const objFixed = {
   name: "Isaac",
   greet: function() {
     setTimeout(() => {
-      console.log(`Hello, ${this.name}!`) // `this` refers to `objFixed`
+      console.log(`Hello, ${this.name}!`) 
     }, 1000);
   }
 }
 objFixed.greet();
 
-// Ejemplo ES6+: Template Literals
 const Greeting = ({ name }: { name: string }) => {
   console.log(`Renderizando Greeting para: ${name}`)
   const message = `Hola ${name} - Tarea 1`
   return <h1>{message}</h1>
 }
 
-// Ejemplo ES6+: Destructuring en props
 const UserProfile = ({ name, age, email }: { name: string, age: number, email: string }) => {
   console.log(`Renderizando UserProfile para: ${name}, Edad: ${age}, Email: ${email}`)
   return (
@@ -45,7 +41,6 @@ const UserProfile = ({ name, age, email }: { name: string, age: number, email: s
   )
 }
 
-// Ejemplo ES6+: Nested Destructuring
 const NestedDestructuring = ({ team }: { team: { lead: { name: string, email: string }, size: number } }) => {
   const { lead: { name: leadName }, size } = team;
   console.log(`El nombre del líder es: ${leadName} y el tamaño del equipo es: ${size}`);
@@ -58,7 +53,6 @@ const NestedDestructuring = ({ team }: { team: { lead: { name: string, email: st
   )
 }
 
-// Ejemplo ES6+: Arrow Function en componente
 const CounterExample = () => {
   const [countExample, setCountExample] = useState(0)
 
@@ -75,7 +69,6 @@ const CounterExample = () => {
   )
 }
 
-// Ejemplo ES6+: Uso de un módulo (mathUtils) en un componente
 const Calculator = () => {
   const sum = mathUtils.add(10, 5)
   const difference = mathUtils.subtract(10, 5)
