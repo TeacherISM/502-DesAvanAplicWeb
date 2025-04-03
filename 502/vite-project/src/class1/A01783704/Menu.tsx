@@ -36,7 +36,7 @@ const Menu = () => {
     <div>
       <nav>
         <button style={buttonStyle} onClick={() => setSelectedClass("class0")}>
-          Class 0
+          Class 01
         </button>
         <button style={buttonStyle} onClick={() => setSelectedClass("class1")}>
           Class 1
