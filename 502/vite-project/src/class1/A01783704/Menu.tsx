@@ -23,7 +23,7 @@ const Menu = () => {
   };
 
   const buttonStyle = {
-    margin: "0.5rem",
+    margin: "0.6rem",
     padding: "0.5rem 1rem",
     border: "none",
     borderRadius: "4px",
