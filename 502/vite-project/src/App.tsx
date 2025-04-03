@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import './class1/A01025119/dokyu_main.tsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +24,11 @@ function App() {
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+        <p>
+          <a href="/A01025119" target="_blank" rel="noopener noreferrer">
+            Pagina de Do Kyu
+          </a>
         </p>
       </div>
       <p className="read-the-docs">
