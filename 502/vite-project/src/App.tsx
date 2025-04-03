@@ -19,7 +19,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button>
-        <a href="/src/menu/index.html">Activities index</a>
+        <a href="/src/class1/A01784521/menu/index.html">Activities index</a>
         </button>
       </div>
       <p className="read-the-docs">
