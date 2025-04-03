@@ -75,7 +75,7 @@ const reducer = (
 };
 
 // Main Component: Login Page with useReducer
-const Fundamentals = () => {
+const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const headingStyle = {
@@ -89,6 +89,16 @@ const Fundamentals = () => {
 
   const hrStyle = {
     margin: "2rem 0",
+  };
+
+  const buttonStyle = {
+    margin: "1rem",
+    padding: "0.5rem 1rem",
+    border: "none",
+    borderRadius: "4px",
+    backgroundColor: "#3b82f6",
+    color: "#fff",
+    cursor: "pointer",
   };
 
   // Login form submit handler
@@ -111,8 +121,6 @@ const Fundamentals = () => {
   return (
     <div>
       <h1 style={headingStyle}>React Implementation</h1>
-
-      {/* Login Form Section */}
       <h2 style={headingStyle}>Login Page</h2>
       <form
         onSubmit={(e) => {
@@ -153,8 +161,12 @@ const Fundamentals = () => {
         </div>
         <Button label="Sign In" onClick={handleSubmit} />
       </form>
-
       <hr style={hrStyle} />
+      {onBack && (
+        <button style={buttonStyle} onClick={onBack}>
+          Back to Menu
+        </button>
+      )}
     </div>
   );
 };

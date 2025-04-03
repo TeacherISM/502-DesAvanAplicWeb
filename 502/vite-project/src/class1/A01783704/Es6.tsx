@@ -1,4 +1,7 @@
-const Es6 = () => {
+// Es6.tsx
+import React from "react";
+
+const Es6 = ({ onBack }: { onBack?: () => void }) => {
   // Example of arrow function
   const add = (a: number, b: number): number => a * b;
   const result = add(5, 10);
@@ -27,6 +30,16 @@ const Es6 = () => {
   const b = 10;
   const sumMessage = `The sum of ${a} and ${b} is ${a + b}.`;
 
+  const buttonStyle = {
+    margin: "1rem",
+    padding: "0.5rem 1rem",
+    border: "none",
+    borderRadius: "4px",
+    backgroundColor: "#3b82f6",
+    color: "#fff",
+    cursor: "pointer",
+  };
+
   return (
     <>
       <h1>ES6</h1>
@@ -40,6 +53,12 @@ const Es6 = () => {
         <p>{`Team size: ${teamSize}`}</p>
         <p>{sumMessage}</p>
       </div>
+      {/* Botón para regresar al Menu */}
+      {onBack && (
+        <button style={buttonStyle} onClick={onBack}>
+          Back to Menu
+        </button>
+      )}
     </>
   );
 };

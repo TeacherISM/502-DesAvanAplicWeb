@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// fundamentals.tsx
+import React, { useReducer } from "react";
 
 // Reusable InputField Component
 const InputField = ({
@@ -50,8 +51,34 @@ const Button = ({ label, onClick }: { label: string; onClick: () => void }) => {
   );
 };
 
-// Main Component: Fundamentals Login Page
-const Fundamentals = () => {
+// Initial state for the form
+const initialState = {
+  email: "",
+  password: "",
+  error: "",
+};
+
+// Reducer function to manage form state
+const reducer = (
+  state: typeof initialState,
+  action: { type: string; field?: string; value?: string }
+) => {
+  switch (action.type) {
+    case "UPDATE_FIELD":
+      return { ...state, [action.field!]: action.value, error: "" };
+    case "SET_ERROR":
+      return { ...state, error: action.value! };
+    case "RESET":
+      return initialState;
+    default:
+      return state;
+  }
+};
+
+// Main Component: Login Page with useReducer
+const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   const headingStyle = {
     marginBottom: "1rem",
   };
@@ -65,19 +92,36 @@ const Fundamentals = () => {
     margin: "2rem 0",
   };
 
-  // Using useState hook for form state management
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const buttonStyle = {
+    margin: "1rem",
+    padding: "0.5rem 1rem",
+    border: "none",
+    borderRadius: "4px",
+    backgroundColor: "#3b82f6",
+    color: "#fff",
+    cursor: "pointer",
+  };
 
   // Login form submit handler
   const handleSubmit = () => {
+    const { email, password } = state;
+
+    // Validation logic
+    if (!email || !password) {
+      dispatch({ type: "SET_ERROR", value: "Both fields are required." });
+      return;
+    }
+
     console.log("Email:", email);
     console.log("Password:", password);
+
+    // Reset form after successful submission
+    dispatch({ type: "RESET" });
   };
 
   return (
     <div>
-      <h1 style={headingStyle}>React Fundamentals</h1>
+      <h1 style={headingStyle}>React Implementation</h1>
 
       {/* Login Form Section */}
       <h2 style={headingStyle}>Login Page</h2>
@@ -87,13 +131,20 @@ const Fundamentals = () => {
           handleSubmit();
         }}
       >
+        {state.error && <p style={{ color: "red" }}>{state.error}</p>}
         <div style={formGroupStyle}>
           <label>Email:</label>
           <InputField
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={state.email}
+            onChange={(e) =>
+              dispatch({
+                type: "UPDATE_FIELD",
+                field: "email",
+                value: e.target.value,
+              })
+            }
           />
         </div>
         <div style={formGroupStyle}>
@@ -101,14 +152,27 @@ const Fundamentals = () => {
           <InputField
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={state.password}
+            onChange={(e) =>
+              dispatch({
+                type: "UPDATE_FIELD",
+                field: "password",
+                value: e.target.value,
+              })
+            }
           />
         </div>
         <Button label="Sign In" onClick={handleSubmit} />
       </form>
 
       <hr style={hrStyle} />
+
+      {/* Botón para regresar al Menu (si se proporcionó la función onBack) */}
+      {onBack && (
+        <button style={buttonStyle} onClick={onBack}>
+          Back to Menu
+        </button>
+      )}
     </div>
   );
 };
