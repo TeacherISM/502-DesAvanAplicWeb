@@ -6,6 +6,8 @@ const App = () => {
   return (
     <div>
       <ClassActivity />
+      <br />
+      <a href="/src/class1/A01782876/index.html">Regresar al menú</a>
     </div>
   );
 };

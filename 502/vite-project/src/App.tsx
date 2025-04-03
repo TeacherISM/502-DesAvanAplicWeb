@@ -30,7 +30,7 @@ function App() {
       </p>
 
       <a
-        href="/src/class2/A01782876/index.html"
+        href="/src/class1/A01782876/index.html"
         id="marcosdayan"
         className="marcosdayan"
       >

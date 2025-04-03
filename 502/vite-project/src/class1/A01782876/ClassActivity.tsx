@@ -26,10 +26,6 @@ const ClassActivity = () => {
 
       <h4>Using ES6+ JavaScript</h4>
       {greetEs6(user)}
-
-      <br />
-      <br />
-      <a href="/src/index.html">Regresar al menú</a>
     </div>
   );
 };
