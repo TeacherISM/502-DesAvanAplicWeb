@@ -24,6 +24,10 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+        <div>
+          <p style={{ fontSize: '24px', fontWeight: 'bold' }}> Enlaces a las tareas de José Manuel García Zumaya A01784238</p>
+          <a href='src/class1/A01784238/index.html'>Clase 1</a>
+        </div>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
