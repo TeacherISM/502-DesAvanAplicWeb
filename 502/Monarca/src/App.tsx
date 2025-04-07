@@ -5,7 +5,6 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [showIframe, setShowIframe] = useState(false)
 
   return (
     <>
@@ -29,13 +28,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <p>
-        <a href="src/class1/A01028415/index.html" target="_blank" rel="noopener noreferrer">
-          Emiliano Romero López A01028415
-        </a>
-      </p>
     </>
-    
   )
 }
 
