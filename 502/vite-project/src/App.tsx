@@ -1,11 +1,12 @@
 import React from 'react';
-import Login from './class1/A01784675/Pages/Login'; // 👈 Este es tu componente real
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './clase2/A01784675/routes/AppRoutes';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <Login />
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 };
 

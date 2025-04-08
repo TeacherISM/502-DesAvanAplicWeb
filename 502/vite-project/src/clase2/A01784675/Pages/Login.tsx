@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import InputField from '../components/InputField';
 import Button from '../components/Button';
 
 const Login: React.FC = () => {
   const [form, setForm] = useState({ username: '', password: '' });
+  const navigate = useNavigate(); 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -13,6 +15,7 @@ const Login: React.FC = () => {
   const handleSubmit = () => {
     console.log(`Username: ${form.username}`);
     console.log(`Password: ${form.password}`);
+    navigate('/dashboard'); // 👈 Redirige al Dashboard
   };
 
   return (

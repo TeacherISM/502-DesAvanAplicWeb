@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from '../class1/A01784675/Pages/Login';
-import Dashboard from '../class1/A01784675/Pages/Dashboard';
+import Login from "../Pages/Login";
+import Dashboard from "../Pages/Dashboard";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -14,4 +14,3 @@ const AppRoutes: React.FC = () => {
 };
 
 export default AppRoutes;
-
