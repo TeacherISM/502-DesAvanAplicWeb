@@ -1,106 +1,54 @@
-import React, { useReducer } from "react";
+import React, { useState, useEffect } from "react";
 import InputField from "../../class2/A01028786/components/InputField";
 import Button from "../../class2/A01028786/components/Button";
 import "./Login.css";
 
-// Estado que representa los valores del formulario
-interface LoginState {
-  username: string;
-  password: string;
-  error: string;
-  loading: boolean;
-}
-
-// Acciones posibles para modificar el estado del formulario
-type LoginAction =
-  | { type: "ACTUALIZAR_CAMPO"; campo: "username" | "password"; valor: string }
-  | { type: "MOSTRAR_ERROR"; mensaje: string }
-  | { type: "CAMBIAR_CARGANDO"; valor: boolean }
-  | { type: "REINICIAR" };
-
-// Estado inicial del formulario
-const estadoInicial: LoginState = {
-  username: "",
-  password: "",
-  error: "",
-  loading: false,
-};
-
-// Reducer que maneja las actualizaciones de estado
-const loginReducer = (estado: LoginState, accion: LoginAction): LoginState => {
-  switch (accion.type) {
-    case "ACTUALIZAR_CAMPO":
-      return { ...estado, [accion.campo]: accion.valor };
-    case "MOSTRAR_ERROR":
-      return { ...estado, error: accion.mensaje };
-    case "CAMBIAR_CARGANDO":
-      return { ...estado, loading: accion.valor };
-    case "REINICIAR":
-      return estadoInicial;
-    default:
-      return estado;
-  }
-};
-
-// Componente principal de inicio de sesión con useReducer
 const Login: React.FC = () => {
-  const [formulario, despachar] = useReducer(loginReducer, estadoInicial);
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
-  // Simula el envío del formulario con una validación
-  const manejarEnvio = () => {
-    despachar({ type: "CAMBIAR_CARGANDO", valor: true });
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError("");
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
 
+  const handleSubmit = () => {
+    setLoading(true);
     setTimeout(() => {
-      if (formulario.username === "admin" && formulario.password === "password") {
-        console.log("Inicio de sesión exitoso");
-        despachar({ type: "MOSTRAR_ERROR", mensaje: "" });
+      if (username === "admin" && password === "password") {
+        console.log("Login successful");
       } else {
-        despachar({ type: "MOSTRAR_ERROR", mensaje: "Usuario o contraseña incorrectos" });
+        setError("Invalid username or password");
       }
-
-      despachar({ type: "CAMBIAR_CARGANDO", valor: false });
+      setLoading(false);
     }, 1000);
   };
 
   return (
-    <div className="container">
+    <div className="login-container">
       <h1>Login</h1>
-
-      {/* Mensaje de error si existe */}
-      {formulario.error && <p className="error">{formulario.error}</p>}
-
-      {/* Campo de usuario */}
+      {error && <p className="error">{error}</p>}
       <InputField
         type="text"
         placeholder="Username"
-        value={formulario.username}
-        onChange={(e) =>
-          despachar({
-            type: "ACTUALIZAR_CAMPO",
-            campo: "username",
-            valor: e.target.value,
-          })
-        }
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
-
-      {/* Campo de contraseña */}
       <InputField
         type="password"
         placeholder="Password"
-        value={formulario.password}
-        onChange={(e) =>
-          despachar({
-            type: "ACTUALIZAR_CAMPO",
-            campo: "password",
-            valor: e.target.value,
-          })
-        }
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
-
-      {/* Botón para enviar el formulario */}
       <Button
-        label={formulario.loading ? "Loading..." : "Submit"}
-        onClick={manejarEnvio}
+        label={loading ? "Loading..." : "Submit"}
+        onClick={handleSubmit}
       />
     </div>
   );

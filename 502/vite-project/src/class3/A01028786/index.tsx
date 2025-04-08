@@ -33,7 +33,7 @@ const App = () => {
 
         <div className="button-container">
           <button onClick={() => cambiarPantalla("login")} className="nav-button">
-            Login - useReducer
+            Login - useState & useEffect
           </button>
         </div>
 
