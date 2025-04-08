@@ -20,7 +20,7 @@ function App() {
 
       <div className="card">
         <a href="./src/App.tsx" target="_blank" rel="noopener noreferrer">
-          <button>Ir a class1/index.html</button>
+          <button>Ir a class2/index.html</button>
         </a>
       </div>
 
