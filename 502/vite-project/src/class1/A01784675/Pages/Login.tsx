@@ -18,8 +18,20 @@ const Login: React.FC = () => {
   return (
     <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
       <h1 className="text-xl font-bold">Login</h1>
-      <InputField type="text" name="username" placeholder="Username" value={form.username} onChange={handleChange} />
-      <InputField type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} />
+      <InputField
+        type="text"
+        name="username"
+        placeholder="Username"
+        value={form.username}
+        onChange={handleChange}
+      />
+      <InputField
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={form.password}
+        onChange={handleChange}
+      />
       <Button label="Submit" onClick={handleSubmit} />
     </div>
   );

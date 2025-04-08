@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface InputProps {
+interface InputFieldProps {
   type: string;
   name: string;
   placeholder?: string;
@@ -8,15 +8,23 @@ interface InputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const InputField: React.FC<InputProps> = ({ type, name, placeholder, value, onChange }) => (
-  <input
-    type={type}
-    name={name}
-    placeholder={placeholder}
-    value={value}
-    onChange={onChange}
-    className="w-full p-2 border border-gray-300 rounded"
-  />
-);
+const InputField: React.FC<InputFieldProps> = ({
+  type,
+  name,
+  placeholder,
+  value,
+  onChange,
+}) => {
+  return (
+    <input
+      type={type}
+      name={name}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      className="w-full p-2 border border-gray-300 rounded"
+    />
+  );
+};
 
 export default InputField;
