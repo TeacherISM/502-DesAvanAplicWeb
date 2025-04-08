@@ -1,0 +1,27 @@
+.login-container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container h1 {
+    margin-bottom: 24px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .error {
+    color: #e63946;
+    background-color: #ffe5e8;
+    border: 1px solid #e63946;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  
