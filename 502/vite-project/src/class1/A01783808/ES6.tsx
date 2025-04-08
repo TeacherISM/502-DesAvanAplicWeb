@@ -14,29 +14,23 @@ type Team = {
 };
 
 const ES6 = () => {
-  // Arrow function
   const add = (a: number, b: number): number => a + b;
 
-  // Arrow function fixing `this`
   const objFixed = {
     name: "Alice",
     greet: function (): void {
       setTimeout(() => {
-        // `this` correctly refers to `objFixed`
         console.log(`Hello, ${this.name}!`);
       }, 1000);
     },
   };
 
-  // Object destructuring
   const user: User = { name: "Bob", age: 30 };
   const { name: userName, age } = user;
 
-  // Array destructuring
   const colors: string[] = ["red", "green", "blue"];
   const [primary, secondary] = colors;
 
-  // Nested destructuring
   const team: Team = {
     lead: { name: "Alice", email: "alice@example.com" },
     size: 5,
@@ -45,64 +39,96 @@ const ES6 = () => {
     lead: { name: leadName },
   } = team;
 
-  // String interpolation
   const charlieName: string = "Charlie";
 
-  // Multi-line strings
   const message: string = `
   Dear ${charlieName},
   Thank you for your order.
 `;
 
-  // Expressions inside placeholders
   const a: number = 5;
   const b: number = 10;
 
-  // 9. Demonstrate Modules (Named Exports/Imports & Default Export/Import)
-  const mathSum = addFunction(a, b); // from mathUtils
-  const mathDifference = subtract(a, b); // from mathUtils
+  const mathSum = addFunction(a, b);
+  const mathDifference = subtract(a, b);
 
   return (
-    <div>
-      <h1>ES6 Features Demo</h1>
+    <div className="max-w-3xl mx-auto px-6 py-10 text-gray-800">
+      <h1 className="text-4xl font-bold mb-6 text-blue-700">
+        Class 1: ES6 Features Demo
+      </h1>
 
-      <h2>1. Arrow Function</h2>
-      <p>Result of add(3, 4): {add(3, 4)}</p>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">1. Arrow Function</h2>
+        <p className="text-lg">
+          Result of add(3, 4): <span className="font-mono">{add(3, 4)}</span>
+        </p>
+      </section>
 
-      <h2>2. Arrow Function Fixing "this"</h2>
-      <button onClick={objFixed.greet}>
-        Click to greet (Check the console)
-      </button>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">
+          2. Arrow Function Fixing "this"
+        </h2>
+        <button
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          onClick={() => objFixed.greet()}
+        >
+          Click to greet (Check the console)
+        </button>
+      </section>
 
-      <h2>3. Object Destructuring</h2>
-      <p>User's Name: {userName}</p>
-      <p>User's Age: {age}</p>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">3. Object Destructuring</h2>
+        <p className="text-lg">User's Name: {userName}</p>
+        <p className="text-lg">User's Age: {age}</p>
+      </section>
 
-      <h2>4. Array Destructuring</h2>
-      <p>Primary Color: {primary}</p>
-      <p>Secondary Color: {secondary}</p>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">4. Array Destructuring</h2>
+        <p className="text-lg">Primary Color: {primary}</p>
+        <p className="text-lg">Secondary Color: {secondary}</p>
+      </section>
 
-      <h2>5. Nested Destructuring</h2>
-      <p>Team Lead's Name: {leadName}</p>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">5. Nested Destructuring</h2>
+        <p className="text-lg">Team Lead's Name: {leadName}</p>
+      </section>
 
-      <h2>6. String Interpolation</h2>
-      <p>{`Hello, ${charlieName}!`}</p>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">6. String Interpolation</h2>
+        <p className="text-lg">{`Hello, ${charlieName}!`}</p>
+      </section>
 
-      <h2>7. Multi-line Strings</h2>
-      {/* Use <pre> so line breaks are visible */}
-      <pre>{message}</pre>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">7. Multi-line Strings</h2>
+        <pre className="bg-gray-100 p-4 rounded text-sm whitespace-pre-line">
+          {message}
+        </pre>
+      </section>
 
-      <h2>8. Expressions in Placeholders</h2>
-      <p>{`The sum is ${a + b}.`}</p>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">
+          8. Expressions in Placeholders
+        </h2>
+        <p className="text-lg">{`The sum is ${a + b}.`}</p>
+      </section>
 
-      <h2>9. ES6 Modules</h2>
-      <p>
-        Imported <code>add</code> result: {mathSum}
-      </p>
-      <p>
-        Imported <code>subtract</code> result: {mathDifference}
-      </p>
-      <p>Check console for a logged message from the default export.</p>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">9. ES6 Modules</h2>
+        <p className="text-lg">
+          Imported{" "}
+          <code className="font-mono bg-gray-200 px-1 rounded">add</code>{" "}
+          result: {mathSum}
+        </p>
+        <p className="text-lg">
+          Imported{" "}
+          <code className="font-mono bg-gray-200 px-1 rounded">subtract</code>{" "}
+          result: {mathDifference}
+        </p>
+        <p className="text-sm text-gray-600">
+          Check console for a logged message from the default export.
+        </p>
+      </section>
     </div>
   );
 };
