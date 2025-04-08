@@ -18,7 +18,7 @@ const ExerciseMenu = () => {
           </tr>
           <tr>
             <td style={{ border: '1px solid black', padding: '10px' }}>Ejercicio 2</td>
-            <td style={{ border: '1px solid black', padding: '10px' }}><a href="/src/class2/A01784107/class2.jsx">Clase 2</a></td>
+            <td style={{ border: '1px solid black', padding: '10px' }}><a href="/src/class2/A01784107/index.html">Clase 2</a></td>
           </tr>
           <tr>
             <td style={{ border: '1px solid black', padding: '10px' }}>Ejercicio 3</td>
