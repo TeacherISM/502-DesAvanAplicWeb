@@ -78,7 +78,7 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
     }
 
     // Simulate successful login
-    if (email === "admin" && password === "password") {
+    if (email === "admin1" && password === "password1") {
       dispatch({ type: "SET_SUCCESS" });
     } else {
       dispatch({ type: "SET_ERROR", value: "Invalid email or password." });
