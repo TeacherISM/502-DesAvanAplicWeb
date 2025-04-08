@@ -2,7 +2,6 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Functions from '../src/class1/A01784107/class1.tsx'
 
 function App() {
  // const [count, setCount] = useState(0)
@@ -20,7 +19,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button>
-          <a href="src/class3/menu/index.html">Menu de Joseph Shakalo</a>
+          <a href="src/class1/A01784107/menu/index.html">Menu de Joseph Shakalo</a>
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
@@ -29,7 +28,6 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <Functions />
     </>
 
     
