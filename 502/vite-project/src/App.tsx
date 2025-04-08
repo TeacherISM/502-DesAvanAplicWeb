@@ -27,7 +27,7 @@ function App() {
       </div>
 
       <div className="card">
-        <a href="./src/class1/A01784465/index.html" target="_blank" rel="noopener noreferrer">
+        <a href="./src/class2/A01784465/index.html" target="_blank" rel="noopener noreferrer">
           <button>Ir a class1/index.html</button>
         </a>
       </div>
