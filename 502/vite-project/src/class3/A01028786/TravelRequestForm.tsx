@@ -1,5 +1,7 @@
-import React, { useReducer, ChangeEvent } from 'react';
+import React, { useReducer, ChangeEvent } from "react";
+import "./TravelRequestForm.css";
 
+// Estado del formulario de solicitud de viaje
 interface TravelState {
   destination: string;
   startDate: string;
@@ -7,74 +9,91 @@ interface TravelState {
   purpose: string;
 }
 
+// Acciones disponibles para el reducer
 type TravelAction = {
-  type: 'UPDATE_FIELD';
-  field: keyof TravelState;
-  value: string;
+  type: "MODIFICAR_CAMPO";
+  campo: keyof TravelState;
+  valor: string;
 };
 
-const initialState: TravelState = {
-  destination: '',
-  startDate: '',
-  endDate: '',
-  purpose: '',
+// Valores iniciales del formulario
+const estadoInicial: TravelState = {
+  destination: "",
+  startDate: "",
+  endDate: "",
+  purpose: "",
 };
 
-const reducer = (state: TravelState, action: TravelAction): TravelState => {
-  switch (action.type) {
-    case 'UPDATE_FIELD':
-      return { ...state, [action.field]: action.value };
+// Reducer que actualiza los valores del formulario
+const formularioReducer = (estado: TravelState, accion: TravelAction): TravelState => {
+  switch (accion.type) {
+    case "MODIFICAR_CAMPO":
+      return { ...estado, [accion.campo]: accion.valor };
     default:
-      return state;
+      return estado;
   }
 };
 
+// Componente que representa el formulario de solicitud de viaje
 const TravelRequestForm: React.FC = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [formulario, despachar] = useReducer(formularioReducer, estadoInicial);
 
-  const handleChange = (field: keyof TravelState, value: string) => {
-    dispatch({ type: 'UPDATE_FIELD', field, value });
+  // Actualiza el campo correspondiente en el estado del formulario
+  const actualizarCampo = (campo: keyof TravelState, valor: string) => {
+    despachar({ type: "MODIFICAR_CAMPO", campo, valor });
   };
 
-  const handleSubmit = () => {
-    console.log('Travel Request:', state);
+  // Acción al enviar el formulario
+  const enviarFormulario = () => {
+    console.log("Travel Request:", formulario);
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h1>Travel Request Form</h1>
+
       <input
         type="text"
         placeholder="Destination"
-        value={state.destination}
+        value={formulario.destination}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          handleChange('destination', e.target.value)
+          actualizarCampo("destination", e.target.value)
         }
+        className="input"
       />
+
       <input
         type="date"
         placeholder="Start Date"
-        value={state.startDate}
+        value={formulario.startDate}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          handleChange('startDate', e.target.value)
+          actualizarCampo("startDate", e.target.value)
         }
+        className="input"
       />
+
       <input
         type="date"
         placeholder="End Date"
-        value={state.endDate}
+        value={formulario.endDate}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          handleChange('endDate', e.target.value)
+          actualizarCampo("endDate", e.target.value)
         }
+        className="input"
       />
+
       <textarea
         placeholder="Purpose"
-        value={state.purpose}
+        value={formulario.purpose}
         onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-          handleChange('purpose', e.target.value)
+          actualizarCampo("purpose", e.target.value)
         }
+        className="textarea"
       />
-      <button onClick={handleSubmit}>Submit</button>
+
+      <button onClick={enviarFormulario} className="submit-button">
+        Submit
+      </button>
     </div>
   );
 };
