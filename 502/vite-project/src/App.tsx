@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import LoginFooter from './class1/A01783980/LoginFooter.tsx' // We'll create this component
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import LoginFooter from "./class1/A01783980/LoginFooter.tsx"; // We'll create this component
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [showLoginInfo, setShowLoginInfo] = useState(false)
-  
+  const [count, setCount] = useState(0);
+  const [showLoginInfo, setShowLoginInfo] = useState(false);
+
   return (
     <>
       <div>
@@ -27,23 +27,29 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      
+
       {/* Login button */}
       <div className="card">
         <button onClick={() => setShowLoginInfo(!showLoginInfo)}>
-          {showLoginInfo ? 'Hide Login Info' : 'Show Login Info'}
+          {showLoginInfo ? "Hide Login Info" : "Show Login Info"}
         </button>
-        <a href="/login" className="login-link">Go to Login Page</a>
+        <a href="/login" className="login-link">
+          Go to Login Page
+        </a>
+        <a href="/hooks" className="login-link">
+          {" "}
+          React Hooks Demo
+        </a>
       </div>
-      
+
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      
+
       {/* Footer with ES6+ examples */}
       {showLoginInfo && <LoginFooter />}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
