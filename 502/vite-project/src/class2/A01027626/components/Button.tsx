@@ -1,4 +1,5 @@
 import React from "react";
+import "./Button.css";
 
 interface ButtonProps {
   label: string;
@@ -7,10 +8,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
   return (
-    <button
-      onClick={onClick}
-      style={{ padding: "10px 20px", backgroundColor: "blue", color: "white" }}
-    >
+    <button onClick={onClick} className="custom-button">
       {label}
     </button>
   );

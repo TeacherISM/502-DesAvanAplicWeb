@@ -1,4 +1,5 @@
 import React from "react";
+import "./InputField.css";
 
 interface InputFieldProps {
   type: string;
@@ -19,7 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      style={{ padding: "10px", margin: "10px 0" }}
+      className="custom-input"
     />
   );
 };
