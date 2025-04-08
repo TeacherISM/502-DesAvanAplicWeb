@@ -39,12 +39,12 @@ const Login: React.FC = () => {
       <Button label="Submit" onClick={enviarCredenciales} />
 
       {/* Sección con una tarjeta informativa */}
-      <h2 className="card-title">Card de Solicitud de Viaje</h2>
+      <h2 className="card-title">Tarjeta de Solicitud de Viaje</h2>
       <Card
-        title="Viaje a Monterrey"
-        description="Solicitud para asistir a un evento de innovación."
-        date="2025-04-08"
-        onClick={() => console.log("Card clicked!")}
+        title="Viaje a Acapulco"
+        description="Solicitud para un viaje de 3 días"
+        date="2025-05-08"
+        onClick={() => console.log("Tarjeta seleccionada!")}
       />
     </div>
   );

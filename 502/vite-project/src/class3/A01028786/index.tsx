@@ -14,7 +14,7 @@ const App = () => {
   const BotonVolverMenuGeneral = () => (
     <div className="tasks-menu-button">
       <a href="/tareas">
-        <button className="nav-button">Volver al Menú Principal</button>
+        <button className="nav-button">Volver al Menú de Tareas</button>
       </a>
     </div>
   );
@@ -27,19 +27,19 @@ const App = () => {
 
         <div className="button-container">
           <button onClick={() => cambiarPantalla("counter")} className="nav-button">
-            Counter (useState)
+            Contador - useState
           </button>
         </div>
 
         <div className="button-container">
           <button onClick={() => cambiarPantalla("login")} className="nav-button">
-            Login (useReducer)
+            Login - useReducer
           </button>
         </div>
 
         <div className="button-container">
           <button onClick={() => cambiarPantalla("travel")} className="nav-button">
-            Travel Request Form (useReducer)
+            Travel Request Form - useReducer
           </button>
         </div>
 
@@ -85,7 +85,7 @@ const App = () => {
         <TravelRequestForm />
         <div className="button-container">
           <button onClick={() => cambiarPantalla("menu")} className="nav-button">
-            Volver al Menú Interno
+            Volver al Menú de Clase 3
           </button>
         </div>
         <BotonVolverMenuGeneral />

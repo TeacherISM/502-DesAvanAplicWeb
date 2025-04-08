@@ -40,7 +40,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
   return (
     <div className="login-container">
-      <h1>Página de Inicio de Sesión</h1>
+      <h1>Login</h1>
 
       {mensajeError && <p className="error">{mensajeError}</p>}
 
@@ -67,7 +67,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       </div>
 
       <button onClick={enviarFormulario} className="submit-button">
-        Iniciar sesión
+        Login
       </button>
     </div>
   );

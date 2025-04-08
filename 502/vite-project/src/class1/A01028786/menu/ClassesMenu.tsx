@@ -11,7 +11,7 @@ const TasksMenu: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>Menú de Tareas - Francisco Urquizo</h1>
+      <h1>Menú de Tareas</h1>
       <ul className="list">
         <li>
           <button onClick={() => irATarea("/src/class1/A01028786/menu/a01028786.html")}>

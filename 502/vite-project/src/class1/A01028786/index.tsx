@@ -25,7 +25,7 @@ const App: React.FC = () => {
       {/* Enlace para volver al menú general de tareas */}
       <div className="navigation-container">
         <a href="/tareas">
-          <button className="back-btn">Volver a TasksMenu General</button>
+          <button className="back-btn">Volver a Menú de Tareas</button>
         </a>
       </div>
     </div>
