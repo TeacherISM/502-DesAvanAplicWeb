@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import "./InputField.css";
 
 interface InputFieldProps {
   type: string;
@@ -7,14 +8,19 @@ interface InputFieldProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const InputField: React.FC<InputFieldProps> = ({ type, placeholder, value, onChange }) => {
+const InputField: React.FC<InputFieldProps> = ({
+  type,
+  placeholder,
+  value,
+  onChange,
+}) => {
   return (
     <input
       type={type}
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      style={{ padding: '10px', margin: '10px 0' }}
+      className="custom-input"
     />
   );
 };
