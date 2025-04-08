@@ -5,6 +5,7 @@ const Es6 = ({ onBack }: { onBack?: () => void }) => {
   // Example of arrow function
   const add = (a: number, b: number): number => a * b;
   const result = add(5, 10);
+
   // Example of template literals and destructuring
   const greet = ({ name, age }: { name: string; age: number }) =>
     `Hello, ${name}! You are ${age} years old.`;

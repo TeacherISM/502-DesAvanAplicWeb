@@ -1,82 +1,11 @@
-import React, { useReducer } from "react";
+import React, { useState, useEffect } from "react";
 
-// Reusable InputField Component
-const InputField = ({
-  type,
-  placeholder,
-  value,
-  onChange,
-}: {
-  type: string;
-  placeholder: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}) => {
-  const inputStyle = {
-    width: "100%",
-    padding: "0.5rem",
-    border: "1px solid #ccc",
-    borderRadius: "4px",
-    marginBottom: "1rem",
-  };
-
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      style={inputStyle}
-    />
-  );
-};
-
-// Reusable Button Component
-const Button = ({ label, onClick }: { label: string; onClick: () => void }) => {
-  const buttonStyle = {
-    padding: "0.5rem 1rem",
-    border: "none",
-    borderRadius: "4px",
-    backgroundColor: "#3b82f6",
-    color: "#fff",
-    cursor: "pointer",
-    marginTop: "1rem",
-  };
-
-  return (
-    <button onClick={onClick} style={buttonStyle}>
-      {label}
-    </button>
-  );
-};
-
-// Initial state for the form
-const initialState = {
-  email: "",
-  password: "",
-  error: "",
-};
-
-// Reducer function to manage form state
-const reducer = (
-  state: typeof initialState,
-  action: { type: string; field?: string; value?: string }
-) => {
-  switch (action.type) {
-    case "UPDATE_FIELD":
-      return { ...state, [action.field!]: action.value, error: "" };
-    case "SET_ERROR":
-      return { ...state, error: action.value! };
-    case "RESET":
-      return initialState;
-    default:
-      return state;
-  }
-};
-
-// Main Component: Login Page with useReducer
+// Main Component: Login Page with useState and useEffect
 const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false); // New state for successful login
 
   const headingStyle = {
     marginBottom: "1rem",
@@ -101,67 +30,86 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
     cursor: "pointer",
   };
 
+  const inputStyle = {
+    width: "100%",
+    padding: "0.5rem",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
+    marginBottom: "1rem",
+  };
+
   // Login form submit handler
-  const handleSubmit = () => {
-    const { email, password } = state;
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent page reload
 
     // Validation logic
     if (!email || !password) {
-      dispatch({ type: "SET_ERROR", value: "Both fields are required." });
+      setError("Both fields are required.");
+      setSuccess(false);
       return;
     }
 
-    console.log("Email:", email);
-    console.log("Password:", password);
+    // Simulate successful login
+    if (email === "admin" && password === "password") {
+      setSuccess(true);
+      setError("");
+    } else {
+      setError("Invalid email or password.");
+      setSuccess(false);
+    }
 
-    // Reset form after successful submission
-    dispatch({ type: "RESET" });
+    // Reset form after successful login
+    if (email === "admin" && password === "password") {
+      setEmail("");
+      setPassword("");
+    }
   };
+
+  // useEffect to clear error when email or password changes
+  useEffect(() => {
+    if (error) {
+      setError("");
+    }
+  }, [email, password]);
 
   return (
     <div>
       <h1 style={headingStyle}>React Implementation</h1>
+
+      {/* Login Form Section */}
       <h2 style={headingStyle}>Login Page</h2>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit();
-        }}
-      >
-        {state.error && <p style={{ color: "red" }}>{state.error}</p>}
+      <form onSubmit={handleSubmit}>
+        {/* Display error or success message */}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {success && <p style={{ color: "green" }}>Login successful!</p>}
         <div style={formGroupStyle}>
           <label>Email:</label>
-          <InputField
+          <input
             type="email"
             placeholder="Email"
-            value={state.email}
-            onChange={(e) =>
-              dispatch({
-                type: "UPDATE_FIELD",
-                field: "email",
-                value: e.target.value,
-              })
-            }
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={inputStyle}
           />
         </div>
         <div style={formGroupStyle}>
           <label>Password:</label>
-          <InputField
+          <input
             type="password"
             placeholder="Password"
-            value={state.password}
-            onChange={(e) =>
-              dispatch({
-                type: "UPDATE_FIELD",
-                field: "password",
-                value: e.target.value,
-              })
-            }
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={inputStyle}
           />
         </div>
-        <Button label="Sign In" onClick={handleSubmit} />
+        <button type="submit" style={buttonStyle}>
+          Sign In
+        </button>
       </form>
+
       <hr style={hrStyle} />
+
+      {/* Back to Menu Button */}
       {onBack && (
         <button style={buttonStyle} onClick={onBack}>
           Back to Menu

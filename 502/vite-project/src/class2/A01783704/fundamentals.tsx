@@ -1,61 +1,11 @@
-// fundamentals.tsx
 import React, { useReducer } from "react";
-
-// Reusable InputField Component
-const InputField = ({
-  type,
-  placeholder,
-  value,
-  onChange,
-}: {
-  type: string;
-  placeholder: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}) => {
-  const inputStyle = {
-    width: "100%",
-    padding: "0.5rem",
-    border: "1px solid #ccc",
-    borderRadius: "4px",
-    marginBottom: "1rem",
-  };
-
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      style={inputStyle}
-    />
-  );
-};
-
-// Reusable Button Component
-const Button = ({ label, onClick }: { label: string; onClick: () => void }) => {
-  const buttonStyle = {
-    padding: "0.5rem 1rem",
-    border: "none",
-    borderRadius: "4px",
-    backgroundColor: "#3b82f6",
-    color: "#fff",
-    cursor: "pointer",
-    marginTop: "1rem",
-  };
-
-  return (
-    <button onClick={onClick} style={buttonStyle}>
-      {label}
-    </button>
-  );
-};
 
 // Initial state for the form
 const initialState = {
   email: "",
   password: "",
   error: "",
+  success: false, // New state to track successful login
 };
 
 // Reducer function to manage form state
@@ -65,9 +15,16 @@ const reducer = (
 ) => {
   switch (action.type) {
     case "UPDATE_FIELD":
-      return { ...state, [action.field!]: action.value, error: "" };
+      return {
+        ...state,
+        [action.field!]: action.value,
+        error: "",
+        success: false,
+      };
     case "SET_ERROR":
-      return { ...state, error: action.value! };
+      return { ...state, error: action.value!, success: false };
+    case "SET_SUCCESS":
+      return { ...state, success: true, error: "" };
     case "RESET":
       return initialState;
     default:
@@ -102,6 +59,14 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
     cursor: "pointer",
   };
 
+  const inputStyle = {
+    width: "100%",
+    padding: "0.5rem",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
+    marginBottom: "1rem",
+  };
+
   // Login form submit handler
   const handleSubmit = () => {
     const { email, password } = state;
@@ -112,11 +77,12 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
       return;
     }
 
-    console.log("Email:", email);
-    console.log("Password:", password);
-
-    // Reset form after successful submission
-    dispatch({ type: "RESET" });
+    // Simulate successful login
+    if (email === "admin" && password === "password") {
+      dispatch({ type: "SET_SUCCESS" });
+    } else {
+      dispatch({ type: "SET_ERROR", value: "Invalid email or password." });
+    }
   };
 
   return (
@@ -131,10 +97,12 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
           handleSubmit();
         }}
       >
+        {/* Display error or success message */}
         {state.error && <p style={{ color: "red" }}>{state.error}</p>}
+        {state.success && <p style={{ color: "green" }}>Login successful!</p>}
         <div style={formGroupStyle}>
           <label>Email:</label>
-          <InputField
+          <input
             type="email"
             placeholder="Email"
             value={state.email}
@@ -145,11 +113,12 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
                 value: e.target.value,
               })
             }
+            style={inputStyle}
           />
         </div>
         <div style={formGroupStyle}>
           <label>Password:</label>
-          <InputField
+          <input
             type="password"
             placeholder="Password"
             value={state.password}
@@ -160,14 +129,17 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
                 value: e.target.value,
               })
             }
+            style={inputStyle}
           />
         </div>
-        <Button label="Sign In" onClick={handleSubmit} />
+        <button type="submit" style={buttonStyle}>
+          Sign In
+        </button>
       </form>
 
       <hr style={hrStyle} />
 
-      {/* Botón para regresar al Menu (si se proporcionó la función onBack) */}
+      {/* Back to Menu Button */}
       {onBack && (
         <button style={buttonStyle} onClick={onBack}>
           Back to Menu
