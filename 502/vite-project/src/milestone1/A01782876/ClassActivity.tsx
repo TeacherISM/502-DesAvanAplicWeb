@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Counter from "./Counter";
-import Login from "./Login";
-import TravelRequestForm from "./TravelRequestForm";
+import Counter from "./components/Counter";
+import Login from "./components/Login";
+import TravelRequestForm from "./components/TravelRequestForm";
 import "/src/App.css";
 
 const ClassActivity = () => {
