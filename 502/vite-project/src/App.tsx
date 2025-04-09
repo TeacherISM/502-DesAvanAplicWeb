@@ -25,6 +25,9 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
+      <a href='/src/class1/A01781442/index.html'>
+      Rafael Blanga Hanono A01781442
+      </a>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
