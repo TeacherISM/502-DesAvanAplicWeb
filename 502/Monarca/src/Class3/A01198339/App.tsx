@@ -6,11 +6,15 @@ function App() {
   const [role, setRole] = useState<string | null>(null);
 
     const handleLogin = (username: string, password: string) => {
-      // Simulate role assignment based on login
-      if (username === 'admin') setRole('admin');
-      else if (username === 'manager') setRole('manager');
+      if (password !== '1234') {
+        alert('Incorrect password')
+        return
+      }
+      if (username === 'user') setRole('user');
+      else if (username === 'admin') setRole('admin');
       else setRole('employee');
     };
+
     return (
       <>
       <div>
@@ -19,7 +23,8 @@ function App() {
             ) : (
               <Login onLogin={handleLogin} />
             )}
-          </div>          <a href="/src/menu/A01198339/index.html">Menu</a>
+          </div>          
+          <a href="/src/menu/A01198339/index.html">Menu</a>
       </>
   )
 }
