@@ -1,5 +1,5 @@
 import TravelRequestForm from "./TravelRequestForm";
-import LoginPage from "./LoginPAge";
+import LoginPage from "./LoginPage";
 
 const App = () => {
   return (
