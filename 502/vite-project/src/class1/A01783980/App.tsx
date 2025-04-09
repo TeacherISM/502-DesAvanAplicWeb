@@ -1,10 +1,12 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import "./../../App.css";
+import LoginFooter from "./LoginFooter.tsx"; // We'll create this component
+import reactLogo from "./../../assets/react.svg";
 import viteLogo from "/vite.svg";
-import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [showLoginInfo, setShowLoginInfo] = useState(false);
 
   return (
     <>
@@ -16,7 +18,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React + Emilio</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -24,13 +26,28 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
-        <a href="/src/class1/A01783980/index.html" className="login-link">
-          A1783980 Work
+      </div>
+
+      {/* Login button */}
+      <div className="card">
+        <button onClick={() => setShowLoginInfo(!showLoginInfo)}>
+          {showLoginInfo ? "Hide Login Info" : "Show Login Info"}
+        </button>
+        <a href="/src/class2/A1783980/index.html" className="login-link">
+          Go to Login Page
+        </a>
+        <a href="/hooks" className="login-link">
+          {" "}
+          React Hooks Demo
         </a>
       </div>
+
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      {/* Footer with ES6+ examples */}
+      {showLoginInfo && <LoginFooter />}
     </>
   );
 }
