@@ -1,100 +1,26 @@
-// src/components/ES6Features.tsx
+import React, { useState } from 'react';
+import InputField from './InputField';
+import Button from './Button';
 
-import { useState } from 'react'
+const Login = () => {
+  const [formData, setFormData] = useState({ username: '', password: '' });
 
-// Módulo simulado: mathUtils (Modules + Arrow Functions)
-const mathUtils = {
-  add: (a: number, b: number) => {
-    console.log(`Se realizó una suma: ${a} + ${b}`)
-    return a + b
-  },
-  subtract: (a: number, b: number) => {
-    console.log(`Se realizó una resta: ${a} - ${b}`)
-    return a - b
-  },
-}
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.type === "password" ? "password" : "username"]: e.target.value });
+  };
 
-// Problema del `this` con Arrow Functions (Resuelto)
-const objFixed = {
-  name: "Isaac",
-  greet: function() {
-    setTimeout(() => {
-      console.log(`Hello, ${this.name}!`) // `this` refers to `objFixed`
-    }, 1000);
-  }
-}
-objFixed.greet();
-
-// Ejemplo ES6+: Template Literals
-const Greeting = ({ name }: { name: string }) => {
-  console.log(`Renderizando Greeting para: ${name}`)
-  const message = `Hola ${name}`
-  return <h1>{message}</h1>
-}
-
-// Ejemplo ES6+: Destructuring en props
-const UserProfile = ({ name, age, email }: { name: string, age: number, email: string }) => {
-  console.log(`Renderizando UserProfile para: ${name}, Edad: ${age}, Email: ${email}`)
-  return (
-    <div>
-      <h2>Perfil de Usuario</h2>
-      <p>Nombre: {name}</p>
-      <p>Edad: {age}</p>
-      <p>Email: {email}</p>
-    </div>
-  )
-}
-
-// Ejemplo ES6+: Nested Destructuring
-const NestedDestructuring = ({ team }: { team: { lead: { name: string, email: string }, size: number } }) => {
-  const { lead: { name: leadName }, size } = team;
-  console.log(`El nombre del líder es: ${leadName} y el tamaño del equipo es: ${size}`);
-  return (
-    <div>
-      <h2>Equipo</h2>
-      <p>Líder: {leadName}</p>
-      <p>Tamaño del equipo: {size}</p>
-    </div>
-  )
-}
-
-// Ejemplo ES6+: Arrow Function en componente
-const CounterExample = () => {
-  const [countExample, setCountExample] = useState(0)
-
-  const incrementExample = () => {
-    setCountExample(countExample + 1)
-    console.log(`Contador incrementado: ${countExample + 1}`)
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
 
   return (
-    <div>
-      <h2>Contador: {countExample}</h2>
-      <button onClick={incrementExample}>Incrementar</button>
-    </div>
-  )
-}
+    <form onSubmit={handleSubmit} className="max-w-sm mx-auto mt-10 p-4 shadow-md rounded">
+      <InputField type="text" placeholder="Username" value={formData.username} onChange={handleChange} />
+      <InputField type="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+      <Button label="Login" onClick={handleSubmit} />
+    </form>
+  );
+};
 
-// Ejemplo ES6+: Uso de un módulo (mathUtils) en un componente
-const Calculator = () => {
-  const sum = mathUtils.add(10, 5)
-  const difference = mathUtils.subtract(10, 5)
-
-  console.log(`Resultados de la calculadora: Suma = ${sum}, Resta = ${difference}`)
-
-  return (
-    <div>
-      <h2>Calculadora</h2>
-      <p>10 + 5 = {sum}</p>
-      <p>10 - 5 = {difference}</p>
-    </div>
-  )
-}
-
-const Tarea2 = () => {
-  return (
-   <h1>Tarea 2</h1>
-  )
-}
-
-export default Tarea2
+export default Login;
