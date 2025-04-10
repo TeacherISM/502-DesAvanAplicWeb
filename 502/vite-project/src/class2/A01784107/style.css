@@ -1,0 +1,73 @@
+.button {
+  padding: 10px 20px;
+  background-color: #1D4ED8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #2563EB;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.input:focus {
+  border-color: #1D4ED8;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #1D4ED8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #2563EB;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.input:focus {
+  border-color: #1D4ED8;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+.card span {
+  color: gray;
+}
