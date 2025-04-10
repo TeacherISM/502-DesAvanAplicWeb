@@ -1,0 +1,81 @@
+/* Estilos Globales */
+* {
+    box-sizing: border-box;
+  }
+
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef;
+    padding: 0;
+    height: 100%; /* hace que el body se expanda para ocupar toda la pantalla */
+  }
+  
+  /* Contenedor Principal */
+  .app {
+    width: 100%;        /* ancho completo */
+    min-height: 100vh;  /* ocupa toda la altura visible (viewport) */
+    margin: 0;          /* elimina margenes */
+    padding: 20px;      /* deja un poco de espacio interior si lo deseas */
+    box-sizing: border-box;
+  }
+  
+  /* Tarjetas para cada componente */
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Encabezados */
+  h1, h2 {
+    color: #333;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Estilos para el Login */
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    border: none;
+    background-color: #007bff;
+    
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Botones Generales */
+  button {
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
