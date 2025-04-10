@@ -8,4 +8,16 @@
 ## A01028786:Francisco, Urquizo (PROJECT_MANAGER)
 ## Project Manager
 
+
+
+
+
+
+
+
+
+
+
+
+## A01028038: Valeria, Tapia (DB/Backend)
 502 - Desarrollo Avanzado de Aplicaciones Web
