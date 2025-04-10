@@ -1,0 +1,26 @@
+.form {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 16px;
+    max-width: 400px;
+    margin: 40px auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input {
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  

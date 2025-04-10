@@ -1,0 +1,40 @@
+.container {
+    max-width: 400px;
+    margin: 80px auto;
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .loading {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: green;
+    font-size: 14px;
+    margin-bottom: 10px;
+
+  }
+  
+  
+  
+
+
+  
