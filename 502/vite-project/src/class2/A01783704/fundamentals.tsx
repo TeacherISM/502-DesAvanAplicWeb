@@ -5,7 +5,7 @@ const initialState = {
   email: "",
   password: "",
   error: "",
-  success: false, // New state to track successful login
+  success: false,
 };
 
 // Reducer function to manage form state
@@ -103,7 +103,7 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
         <div style={formGroupStyle}>
           <label>Email:</label>
           <input
-            type="email"
+            type="text" // Changed from "email" to "text"
             placeholder="Email"
             value={state.email}
             onChange={(e) =>

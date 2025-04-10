@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 // Main Component: Login Page with useState and useEffect
-const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
+const Implementation = ({ onBack }: { onBack?: () => void }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false); // New state for successful login
+  const [success, setSuccess] = useState(false);
 
   const headingStyle = {
     marginBottom: "1rem",
@@ -53,15 +53,11 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
     if (email === "admin" && password === "password") {
       setSuccess(true);
       setError("");
+      setEmail(""); // Reset form after successful login
+      setPassword("");
     } else {
       setError("Invalid email or password.");
       setSuccess(false);
-    }
-
-    // Reset form after successful login
-    if (email === "admin" && password === "password") {
-      setEmail("");
-      setPassword("");
     }
   };
 
@@ -85,7 +81,7 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
         <div style={formGroupStyle}>
           <label>Email:</label>
           <input
-            type="email"
+            type="text" // ✅ Changed from "email" to "text"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -119,4 +115,4 @@ const Fundamentals = ({ onBack }: { onBack?: () => void }) => {
   );
 };
 
-export default Fundamentals;
+export default Implementation;

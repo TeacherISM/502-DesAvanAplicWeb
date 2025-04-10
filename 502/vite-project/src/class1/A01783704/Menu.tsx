@@ -4,6 +4,7 @@ import App from "../../App.tsx";
 import Es6 from "./Es6.tsx";
 import Fundamentals from "../../class2/A01783704/fundamentals.tsx";
 import Implementation from "../../class3/A01783704/Implementation.tsx";
+import Advanced from "../../class4/A01783704/advanced.tsx";
 
 const Menu = ({ goBack }: { goBack: () => void }) => {
   const [selectedClass, setSelectedClass] = useState("");
@@ -28,6 +29,8 @@ const Menu = ({ goBack }: { goBack: () => void }) => {
         return <Fundamentals onBack={() => setSelectedClass("")} />;
       case "class3":
         return <Implementation onBack={() => setSelectedClass("")} />;
+      case "class4":
+        return <Advanced onBack={() => setSelectedClass("")} />;
       default:
         return (
           <div>
@@ -55,6 +58,12 @@ const Menu = ({ goBack }: { goBack: () => void }) => {
               onClick={() => setSelectedClass("class3")}
             >
               Class 3
+            </button>
+            <button
+              style={buttonStyle}
+              onClick={() => setSelectedClass("class4")}
+            >
+              Class 4
             </button>
             <br />
             <button style={buttonStyle} onClick={goBack}>
