@@ -16,7 +16,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Milestone 1</h1>
       <div className="card">
         <button>
           <a href="src/class1/A01784045/menu/index.html">Menu de Isaac Shakalo</a>
