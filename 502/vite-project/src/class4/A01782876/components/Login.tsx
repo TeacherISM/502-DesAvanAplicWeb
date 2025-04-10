@@ -2,11 +2,7 @@ import { useState } from "react";
 import InputField from "./InputField";
 import Button from "./Button";
 
-const Login = ({
-  setIsLoggedIn,
-}: {
-  setIsLoggedIn: (bool: boolean) => void;
-}) => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -18,11 +14,12 @@ const Login = ({
     setTimeout(() => {
       if (username === "admin" && password === "password") {
         console.log("Login successful");
-        setIsLoggedIn(true);
+        localStorage.setItem("isAuthenticated", "true");
         setError("");
+        window.location.reload();
       } else {
         setError("Invalid username or password");
-        setIsLoggedIn(false);
+        localStorage.removeItem("isAuthenticated");
       }
       setLoading(false);
     }, 50);

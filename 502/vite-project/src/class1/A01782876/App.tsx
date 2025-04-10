@@ -14,6 +14,8 @@ const App = () => {
       <a href="/src/class3/A01782876/index.html">Clase 3</a>
       <br />
       <a href="/src/milestone1/A01782876/index.html">Milestone 1</a>
+      <br />
+      <a href="/src/class4/A01782876/index.html">Clase 4</a>
     </div>
   );
 };

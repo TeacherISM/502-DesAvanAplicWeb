@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react";
+import Button from "./Button";
 
 interface State {
   destination: string;
@@ -51,9 +52,15 @@ const TravelRequestForm = () => {
     }
   };
 
+  const handleLogOut = () => {
+    localStorage.removeItem("isAuthenticated");
+    window.location.reload();
+  };
+
   return (
     <div>
       <p className="m-5">Welcome to the Dashboard</p>
+      <Button label="Log Out" onClick={handleLogOut} />
       <h1>Travel Request Form</h1>
 
       <input
