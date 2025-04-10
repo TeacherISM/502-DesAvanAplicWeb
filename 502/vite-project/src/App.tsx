@@ -5,6 +5,11 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const navigateTo = (path: string) => {
+    // You might want to use React Router instead of window.location
+    window.location.href = path;
+};
+
 
   return (
     <>
@@ -18,8 +23,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => navigateTo("/src/class3/A01781321/index.html")}>
+          Class projects
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
