@@ -3,53 +3,68 @@ import InputField from "../../class2/A01749746/components/InputField";
 import Button from "../../class2/A01749746/components/Button";
 import "./Login.css";
 
-const Login: React.FC = () => {
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+interface LoginProps {
+  onLogin: (username: string, password: string) => void;
+}
+
+const Login: React.FC<LoginProps> = ({ onLogin }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (error) {
-      const timer = setTimeout(() => {
-        setError("");
-      }, 3000);
-      return () => clearTimeout(timer);
+      const timeout = setTimeout(() => setError(""), 3000);
+      return () => clearTimeout(timeout);
     }
   }, [error]);
 
-  const handleSubmit = () => {
-    setLoading(true);
+  const handleLoginClick = () => {
+    setIsLoading(true);
     setTimeout(() => {
-      if (username === "admin" && password === "password") {
-        console.log("Login successful");
+      const validPassword = password === "password";
+
+      if (username === "admin" && validPassword) {
+        onLogin(username, password);
+      } else if (username === "manager" && validPassword) {
+        onLogin(username, password);
+      } else if (username && validPassword) {
+        onLogin("employee", password);
       } else {
-        setError("Login unsuccessful");
+        setError("Usuario o contraseña incorrectos");
       }
-      setLoading(false);
+
+      setIsLoading(false);
     }, 1000);
   };
 
   return (
-    <div className="login-container">
-      <h1>Login</h1>
-      {error && <p className="error">{error}</p>}
+    <div className="container">
+      <h2>Iniciar sesión</h2>
+      {error && <p className="fail">{error}</p>}
       <InputField
         type="text"
-        placeholder="Username"
+        placeholder="Usuario"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <InputField
         type="password"
-        placeholder="Password"
+        placeholder="Contraseña"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <Button
-        label={loading ? "Loading..." : "Submit"}
-        onClick={handleSubmit}
+        label={isLoading ? "Cargando..." : "Entrar"}
+        onClick={handleLoginClick}
       />
+      <div className="info">
+        <p><strong>Credenciales de prueba:</strong></p>
+        <p>Admin: usuario = admin / contraseña = password</p>
+        <p>Manager: usuario = manager / contraseña = password</p>
+        <p>Empleado: cualquier otro usuario / contraseña = password</p>
+      </div>
     </div>
   );
 };

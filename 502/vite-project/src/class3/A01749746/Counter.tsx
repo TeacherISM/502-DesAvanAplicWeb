@@ -5,12 +5,12 @@ const Counter: React.FC = () => {
   const [count, setCount] = useState<number>(0);
 
   return (
-    <div className="counter-container">
-      <p className="counter-value">Count: {count}</p>
-      <button className="counter-button" onClick={() => setCount(count + 1)}>
+    <div className="container">
+      <p className="value">Count: {count}</p>
+      <button className="button" onClick={() => setCount(count + 1)}>
         Increment
       </button>
-      <button className="counter-button" onClick={() => setCount(count - 1)}>
+      <button className="button" onClick={() => setCount(count - 1)}>
         Decrement
       </button>
     </div>

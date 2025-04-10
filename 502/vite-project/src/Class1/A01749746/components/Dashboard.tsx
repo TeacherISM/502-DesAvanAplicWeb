@@ -1,8 +1,8 @@
 const Dashboard = () => {
   return (
-    <div className="card dashboard">
+    <div className="dashboard">
       <h2>Dashboard</h2>
-      <p>Welcome to the Dashboard</p>
+      <p>Bienvinido al Dashboard</p>
     </div>
   );
 };

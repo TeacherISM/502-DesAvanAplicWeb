@@ -2,9 +2,9 @@ import React from 'react';
 
 const Menu = () => {
   const exercises = [
-    { name: 'Ejercicio 1', link: '/src/class1/A01749746/index.html', label: 'Clase 1' },
-    { name: 'Ejercicio 2', link: '/src/class2/A01749746/index.html', label: 'Clase 2' },
-    { name: 'Ejercicio 3', link: '/src/class3/A01749746/index.html', label: 'Clase 3' },
+    { name: 'Clase 1', link: '/src/class1/A01749746/index.html', label: 'Tarea 1' },
+    { name: 'Clase 2', link: '/src/class2/A01749746/index.html', label: 'Tarea 2' },
+    { name: 'Clase 3', link: '/src/class3/A01749746/index.html', label: 'Tarea 3' },
   ];
 
   const boxStyle: React.CSSProperties = {

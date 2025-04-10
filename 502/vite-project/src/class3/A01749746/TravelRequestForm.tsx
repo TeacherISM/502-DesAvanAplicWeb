@@ -42,7 +42,7 @@ const TravelRequestForm: React.FC = () => {
   };
 
   return (
-    <div className="travel-form-container">
+    <div className="travel-container">
       <h1>Travel Request Form</h1>
       <input
         type="text"
@@ -51,7 +51,7 @@ const TravelRequestForm: React.FC = () => {
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           handleChange("destination", e.target.value)
         }
-        className="travel-input"
+        className="input"
       />
       <input
         type="date"
@@ -60,7 +60,7 @@ const TravelRequestForm: React.FC = () => {
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           handleChange("startDate", e.target.value)
         }
-        className="travel-input"
+        className="input"
       />
       <input
         type="date"
@@ -69,7 +69,7 @@ const TravelRequestForm: React.FC = () => {
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           handleChange("endDate", e.target.value)
         }
-        className="travel-input"
+        className="input"
       />
       <textarea
         placeholder="Purpose"
@@ -77,9 +77,9 @@ const TravelRequestForm: React.FC = () => {
         onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
           handleChange("purpose", e.target.value)
         }
-        className="travel-textarea"
+        className="textarea"
       />
-      <button onClick={handleSubmit} className="submit-button">
+      <button onClick={handleSubmit} className="button">
         Submit
       </button>
     </div>

@@ -1,4 +1,4 @@
-.counter-container {
+.container {
     text-align: center;
     margin: 40px auto;
     padding: 20px;
@@ -8,14 +8,14 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
   
-  .counter-value {
+  .value {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
     margin-bottom: 15px;
   }
   
-  .counter-button {
+  .button {
     padding: 12px 24px;
     margin: 5px;
     font-size: 1rem;
@@ -28,7 +28,7 @@
     transition: background-color 0.25s ease, transform 0.1s ease;
   }
   
-  .counter-button:hover {
+  .button:hover {
     background-color: #0056b3;
     transform: scale(1.05);
   }

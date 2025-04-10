@@ -4,7 +4,7 @@ import Dashboard from './components/Dashboard';
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="zonaApp">
       <Login />
       <Dashboard />
     </div>

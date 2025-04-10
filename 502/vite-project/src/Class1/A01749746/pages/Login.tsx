@@ -1,38 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import '../style.css';
-import Dashboard from '../components/Dashboard.tsx';
 
-const SumaRapida = () => {
-  const sumar = (a: number, b: number) => a + b;
-  const resultado = sumar(4, 6);
+const SumaArrow = () => {
+  const sum = (a: number, b: number) => a + b;
+  const res = sum(1, 1);
 
   return (
     <div className="card">
-      <h2>Suma con Arrow Function</h2>
-      <p>4 + 6 = {resultado}</p>
+      <h2>Arrow Function Suma</h2>
+      <p>1 + 1 = {res}</p>
     </div>
   );
 };
 
-const DatosUsuario = () => {
-  const usuario = { nombre: "Beto", edad: 22 };
-  const { nombre, edad } = usuario;
+const Destructuring = () => {
+  const car = { brand: "Toyota", model: "Corolla", year: 2020 };
+  const { brand, model, year } = car;
 
-  const colores = ["azul", "verde", "rojo"];
-  const [color1, color2] = colores;
+  const location = ["Ciudad de México", "México"];
+  const [city, country] = location;
 
   return (
     <div className="card">
       <h2>Destructuring</h2>
-      <p>{nombre} tiene {edad} años</p>
-      <p>Colores favoritos: {color1} y {color2}</p>
+      <p>{brand} {model}, año {year}</p>
+      <p>Ubicación: {city}, {country}</p>
     </div>
   );
 };
 
 const MensajePersonalizado = () => {
-  const user = { nombre: "Beto", puntos: 120 };
-  const mensaje = `Hola ${user.nombre}, tienes ${user.puntos} puntos.`;
+  const libro = { titulo: "Cien Años de Soledad", disponible: true };
+  const mensaje = `El libro "${libro.titulo}" está ${libro.disponible ? "disponible" : "no disponible"} en la biblioteca.`;
 
   return (
     <div className="card">
@@ -41,6 +40,7 @@ const MensajePersonalizado = () => {
     </div>
   );
 };
+
 
 const sumar = (a: number, b: number) => a + b;
 const restar = (a: number, b: number) => a - b;
@@ -56,66 +56,64 @@ const OperacionesBasicas = () => {
 };
 
 const LoginForm = () => {
-  const [datos, setDatos] = useState({ usuario: '', clave: '' });
+  const [credenciales, setCredenciales] = useState({ email: '', pin: '' });
 
   const actualizar = ({ target: { name, value } }: React.ChangeEvent<HTMLInputElement>) => {
-    setDatos(prev => ({ ...prev, [name]: value }));
+    setCredenciales(prev => ({ ...prev, [name]: value }));
   };
 
   const enviar = (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Iniciando sesión como: ${datos.usuario}`);
+    alert(`Accediendo con el correo: ${credenciales.email}`);
   };
 
   return (
     <div className="card login">
-      <h2>Iniciar Sesión</h2>
+      <h2>Log In</h2>
       <form onSubmit={enviar}>
         <input
-          type="text"
-          name="usuario"
-          placeholder="Usuario"
-          value={datos.usuario}
+          type="email"
+          name="email"
+          placeholder="Correo Electrónico"
+          value={credenciales.email}
           onChange={actualizar}
         />
         <input
           type="password"
-          name="clave"
-          placeholder="Contraseña"
-          value={datos.clave}
+          name="pin"
+          placeholder="PIN de acceso"
+          value={credenciales.pin}
           onChange={actualizar}
         />
-        <button type="submit">Entrar</button>
+        <button type="submit">Ingresar</button>
       </form>
     </div>
   );
 };
 
-const ListaPosteos = () => {
-  const [posts, setPosts] = useState<any[]>([]);
+interface Usuario {
+  id: number;
+  name: string;
+  email: string;
+}
+
+const ListaUsuarios = () => {
+  const [usuarios, setUsuarios] = useState<Usuario[]>([]);
 
   useEffect(() => {
-    const cargarPosteos = async () => {
-      try {
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
-        const data = await res.json();
-        setPosts(data);
-      } catch (err) {
-        console.error('Error cargando posts:', err);
-      }
-    };
-
-    cargarPosteos();
+    fetch('https://jsonplaceholder.typicode.com/users?_limit=5')
+      .then(res => res.json())
+      .then(data => setUsuarios(data))
+      .catch(err => console.error('Error cargando usuarios:', err));
   }, []);
 
   return (
     <div className="card">
-      <h2>Posteos Recientes</h2>
+      <h2>Usuarios Registrados</h2>
       <ul>
-        {posts.map(post => (
-          <li key={post.id}>
-            <strong>{post.title}</strong><br />
-            {post.body}
+        {usuarios.map(user => (
+          <li key={user.id}>
+            {user.name} — {user.email}
           </li>
         ))}
       </ul>
@@ -123,16 +121,16 @@ const ListaPosteos = () => {
   );
 };
 
+
 const App = () => {
   return (
     <div className="container">
-      <SumaRapida />
-      <DatosUsuario />
+      <SumaArrow />
+      <Destructuring />
       <MensajePersonalizado />
       <OperacionesBasicas />
       <LoginForm />
-      <Dashboard />
-      <ListaPosteos />
+      <ListaUsuarios />
     </div>
   );
 };

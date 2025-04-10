@@ -10,10 +10,10 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, description, date, onClick }) => {
   return (
-    <div className="card" onClick={onClick}>
-      <h3 className="card-title">{title}</h3>
-      <p className="card-description">{description}</p>
-      <small className="card-date">{date}</small>
+    <div className="tarjetaEstilo" onClick={onClick}>
+      <h3 className="tituloTarjeta">{title}</h3>
+      <p className="descripcionTarjeta">{description}</p>
+      <small className="fechaTarjeta">{date}</small>
     </div>
   );
 };

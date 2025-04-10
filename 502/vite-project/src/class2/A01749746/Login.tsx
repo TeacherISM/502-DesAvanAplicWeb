@@ -30,11 +30,11 @@ const Login: React.FC = () => {
       />
       <Button label="Submit" onClick={handleSubmit} />
 
-      <h2 className="card-section-title">Ejemplo del coponente Card</h2>
+      <h2 className="card">Ejemplo del coponente Card</h2>
       <Card
-        title="Viaje"
-        description="Solicitud."
+        title="Reembolso"
         date="2025-02-23"
+        description="Solicitud."
         onClick={() => console.log("Click")}
       />
     </div>

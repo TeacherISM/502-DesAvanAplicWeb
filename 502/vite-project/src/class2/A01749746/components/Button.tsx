@@ -8,7 +8,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
   return (
-    <button onClick={onClick} className="custom-button">
+    <button onClick={onClick} className="diseño-boton">
       {label}
     </button>
   );

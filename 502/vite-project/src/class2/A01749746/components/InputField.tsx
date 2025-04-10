@@ -20,7 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className="custom-input"
+      className="input"
     />
   );
 };
