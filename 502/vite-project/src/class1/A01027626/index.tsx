@@ -20,7 +20,7 @@ const App: React.FC = () => {
       {authenticated ? <Dashboard /> : <Login onLogin={handleLogin} />}
       <div className="navigation-container">
         <a href="/tareas">
-          <button className="back-btn">Volver al Menú Principal</button>
+          <button className="back-btn">Back to Main Menu</button>
         </a>
       </div>
     </div>
@@ -28,7 +28,7 @@ const App: React.FC = () => {
 };
 
 const container = document.getElementById("root");
-if (!container) throw new Error("No se encontró el elemento #root");
+if (!container) throw new Error("Element #root not found");
 
 const root = ReactDOM.createRoot(container);
 

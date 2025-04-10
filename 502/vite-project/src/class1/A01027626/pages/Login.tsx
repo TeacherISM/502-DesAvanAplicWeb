@@ -22,11 +22,11 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const handleSubmit = () => {
     const { username, password } = credentials;
     if (!username || !password) {
-      setError(`Por favor complete todos los campos.`);
+      setError(`Please complete all fields.`);
       return;
     }
     // Template literal para hacer log in al usuario que intenta iniciar sesión
-    console.log(`Intentando iniciar sesión con usuario: ${username}`);
+    console.log(`Trying to log in with user: ${username}`);
     setError("");
     onLogin(username, password);
   };

@@ -3,17 +3,24 @@ import ReactDOM from "react-dom/client";
 import Counter from "./Counter";
 import Login from "./Login";
 import TravelRequestForm from "./TravelRequestForm";
+import Dashboard from "./Dashboard";
 import "./App.css";
 
 const App = () => {
-  const [view, setView] = useState<"menu" | "counter" | "login" | "travel">(
-    "menu"
-  );
+  const [view, setView] = useState<
+    "menu" | "counter" | "login" | "travel" | "dashboard"
+  >("menu");
+  const [role, setRole] = useState<string | null>(null);
+
+  const handleLogin = (incomingRole: string, _password: string) => {
+    setRole(incomingRole);
+    setView("dashboard");
+  };
 
   const TasksMenuButton = () => (
     <div className="tasks-menu-button">
       <a href="/tareas">
-        <button className="nav-button">Volver al Menú Principal</button>
+        <button className="nav-button">Back to Main Menu</button>
       </a>
     </div>
   );
@@ -21,7 +28,7 @@ const App = () => {
   if (view === "menu") {
     return (
       <div className="app-container">
-        <h1>Clase 3</h1>
+        <h1>Class 3</h1>
         <div className="button-container">
           <button onClick={() => setView("counter")} className="nav-button">
             Counter (useState)
@@ -29,7 +36,7 @@ const App = () => {
         </div>
         <div className="button-container">
           <button onClick={() => setView("login")} className="nav-button">
-            Login (useState y useEffect)
+            Login (useState, useEffect & role-based dashboard)
           </button>
         </div>
         <div className="button-container">
@@ -46,7 +53,7 @@ const App = () => {
         <Counter />
         <div className="button-container">
           <button onClick={() => setView("menu")} className="nav-button">
-            Volver al Menú Interno
+            Back to Menu
           </button>
         </div>
         <TasksMenuButton />
@@ -55,10 +62,10 @@ const App = () => {
   } else if (view === "login") {
     return (
       <div className="app-container">
-        <Login />
+        <Login onLogin={handleLogin} />
         <div className="button-container">
           <button onClick={() => setView("menu")} className="nav-button">
-            Volver al Menú Interno
+            Back to Menu
           </button>
         </div>
         <TasksMenuButton />
@@ -70,7 +77,29 @@ const App = () => {
         <TravelRequestForm />
         <div className="button-container">
           <button onClick={() => setView("menu")} className="nav-button">
-            Volver al Menú Interno
+            Back to Menu
+          </button>
+        </div>
+        <TasksMenuButton />
+      </div>
+    );
+  } else if (view === "dashboard") {
+    return (
+      <div className="app-container">
+        {role ? (
+          <Dashboard role={role} />
+        ) : (
+          <p>No role found. Please log in again.</p>
+        )}
+        <div className="button-container">
+          <button
+            onClick={() => {
+              setRole(null);
+              setView("menu");
+            }}
+            className="nav-button"
+          >
+            Log out
           </button>
         </div>
         <TasksMenuButton />

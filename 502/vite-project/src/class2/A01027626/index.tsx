@@ -10,7 +10,7 @@ root.render(
     <div>
       <Login />
       <a href="/tareas" className="navigation-container">
-        <button className="back-btn">Volver al Menú Principal</button>
+        <button className="back-btn">Back to Main Menu</button>
       </a>
     </div>
   </React.StrictMode>

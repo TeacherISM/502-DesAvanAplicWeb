@@ -30,10 +30,10 @@ const Login: React.FC = () => {
       />
       <Button label="Submit" onClick={handleSubmit} />
 
-      <h2 className="card-section-title">Card de Solicitud de Viaje</h2>
+      <h2 className="card-section-title">Travel Request Card</h2>
       <Card
-        title="Viaje a Monterrey"
-        description="Solicitud para asistir a un evento de innovación."
+        title="Trip to Seattle"
+        description="Application to attend an innovation event."
         date="2025-04-08"
         onClick={() => console.log("Card clicked!")}
       />

@@ -3,7 +3,11 @@ import InputField from "../../class2/A01027626/components/InputField";
 import Button from "../../class2/A01027626/components/Button";
 import "./Login.css";
 
-const Login: React.FC = () => {
+interface LoginProps {
+  onLogin: (username: string, password: string) => void;
+}
+
+const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
@@ -22,7 +26,11 @@ const Login: React.FC = () => {
     setLoading(true);
     setTimeout(() => {
       if (username === "admin" && password === "password") {
-        console.log("Login successful");
+        onLogin("admin", "password");
+      } else if (username === "manager" && password === "password") {
+        onLogin("manager", "password");
+      } else if (username && password === "password") {
+        onLogin("employee", "password");
       } else {
         setError("Invalid username or password");
       }
@@ -50,6 +58,14 @@ const Login: React.FC = () => {
         label={loading ? "Loading..." : "Submit"}
         onClick={handleSubmit}
       />
+      <div className="login-info">
+        <p>
+          <strong>Test Credentials:</strong>
+        </p>
+        <p>Admin: username=admin / password=password</p>
+        <p>Manager: username=manager / password=password</p>
+        <p>Employee: username=any other username / password=password</p>
+      </div>
     </div>
   );
 };

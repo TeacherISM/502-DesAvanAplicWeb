@@ -8,7 +8,7 @@ const TasksMenu: React.FC = () => {
 
   return (
     <div className="tasks-menu-container">
-      <h1>Menú de Tareas - Paúl Araque</h1>
+      <h1>Tasks Menu - Paúl Araque</h1>
       <ul className="tasks-menu-list">
         <li>
           <button
@@ -16,21 +16,21 @@ const TasksMenu: React.FC = () => {
               openTask("/src/class1/A01027626/menu/a01027626.html")
             }
           >
-            Clase 1
+            Class 1
           </button>
         </li>
         <li>
           <button
             onClick={() => openTask("/src/class2/A01027626/a01027626.html")}
           >
-            Clase 2
+            Class 2
           </button>
         </li>
         <li>
           <button
             onClick={() => openTask("/src/class3/A01027626/a01027626.html")}
           >
-            Clase 3
+            Class 3
           </button>
         </li>
       </ul>
