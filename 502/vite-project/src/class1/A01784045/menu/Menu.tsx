@@ -4,7 +4,7 @@ const ExerciseMenu = () => {
   const exercises = [
     { name: 'Ejercicio 1', link: '/src/class1/A01784045/index.html', label: 'Clase 1' },
     { name: 'Ejercicio 2', link: '/src/class2/A01784045/index.html', label: 'Clase 2' },
-    { name: 'Ejercicio 3', link: '/src/class3/A01784045/class3.html', label: 'Clase 3' },
+    { name: 'Ejercicio 3', link: '/src/class3/A01784045/index.html', label: 'Clase 3' },
     { name: 'Ejercicio 4', link: '/ejercicio4.html', label: 'Clase 4' },
     { name: 'Ejercicio 5', link: '/ejercicio5.html', label: 'Clase 5' },
   ];

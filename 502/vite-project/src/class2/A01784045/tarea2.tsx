@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import InputField from './InputField';
-import Button from './Button';
+import InputField from './Components/InputField.js';
+import Button from '../../class2/A01784045/Components/Botton.js';
 
 const Login = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });

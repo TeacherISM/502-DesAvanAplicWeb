@@ -20,6 +20,20 @@
     font-size: 14px;
     margin-bottom: 10px;
   }
+  .loading {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: green;
+    font-size: 14px;
+    margin-bottom: 10px;
+
+  }
+  
+  
   
 
 
