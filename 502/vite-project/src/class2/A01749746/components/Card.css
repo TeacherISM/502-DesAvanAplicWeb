@@ -1,0 +1,35 @@
+.tarjetaEstilo {
+  border: none;
+  padding: 1.8rem;
+  margin: 2rem auto;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #1f2937; /* gris oscuro */
+  color: #f3f4f6; /* texto claro */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.tarjetaEstilo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tituloTarjeta {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #93c5fd; /* azul clarito */
+}
+
+.descripcionTarjeta {
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+}
+
+.fechaTarjeta {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}

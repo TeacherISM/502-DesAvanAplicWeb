@@ -1,0 +1,56 @@
+.travel-container {
+  max-width: 520px;
+  margin: 50px auto;
+  padding: 25px 35px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+}
+
+.travel-container h1 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333333;
+  text-align: center;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin: 10px 0 18px;
+  border: 1px solid #b0bec5;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #26a69a;
+  box-shadow: 0 0 4px rgba(38, 166, 154, 0.4);
+  outline: none;
+}
+
+.textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.button {
+  background-color: #26a69a;
+  color: #ffffff;
+  padding: 10px 22px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #1e857f;
+}

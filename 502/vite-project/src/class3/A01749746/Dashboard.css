@@ -1,0 +1,55 @@
+.container {
+    margin: 40px auto;
+    padding: 30px 25px;
+    max-width: 600px;
+    background-color: #f4f4f4;
+    color: #222;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: #00796b;
+  }
+  
+  .message {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    color: #444;
+  }
+  
+  .box {
+    background-color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+  }
+  
+  .box p {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .box ul {
+    padding-left: 18px;
+    margin: 0;
+  }
+  
+  .box li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .box span {
+    color: #00796b;
+    font-weight: 500;
+  }
+  
