@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import InputField from '../components/InputField';
 import Button from '../components/Button';
 
-const Login: React.FC = () => {
+type LoginProps = {
+  onLogin: (username: string, password: string) => void;
+};
+
+const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const [form, setForm] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -16,10 +20,10 @@ const Login: React.FC = () => {
     setLoading(true);
     setError('');
     setTimeout(() => {
-      if (form.username === 'admin' && form.password === 'password') {
-        console.log('Login successful');
+      if (form.username && form.password) {
+        onLogin(form.username, form.password);
       } else {
-        setError('Invalid username or password');
+        setError('Please enter username and password');
       }
       setLoading(false);
     }, 1000);
