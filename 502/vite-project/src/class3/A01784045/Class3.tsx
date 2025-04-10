@@ -110,7 +110,7 @@ const Login: React.FC = () => {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <h1 className={styles.title}>Login</h1>
+        <h1 className={styles.title}>Login </h1> <h6>usuario = username, contraseña = password</h6>
         <InputField type="text" placeholder="Username" value={formData.username} onChange={handleChange} />
         <InputField type="password" placeholder="Password" value={formData.password} onChange={handleChange} />
         {error && <p className={styles.error}>{error}</p>}
