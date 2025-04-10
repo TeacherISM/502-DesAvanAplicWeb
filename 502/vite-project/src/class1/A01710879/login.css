@@ -1,0 +1,113 @@
+/* src/classes/class1/login.css */
+
+/* Estilos generales del body */
+body {
+    margin: 0;
+    padding: 0;
+    /* Fondo degradado suave */
+    background: linear-gradient(120deg, #e1f5fe, #fff9c4);
+    /* Aplica la fuente de Google que importamos (Poppins) */
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Contenedor principal del login */
+  .login-container {
+    max-width: 400px;
+    margin: 60px auto; /* Separación superior e inferior */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* Sombra ligera para simular una tarjeta */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título del formulario */
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600; /* Un poco más grueso para destacar */
+  }
+  
+  /* Agrupación de los campos del formulario */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Etiquetas */
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  /* Campos de texto */
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Botón de enviar */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6200EE; /* Un morado estilo Material Design */
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #3700B3; /* Efecto hover */
+  }
+  /* Contenedor "tarjeta" para el Dashboard */
+.dashboard-container {
+    max-width: 600px;                  /* Ancho máximo */
+    margin: 60px auto;                 /* Margen automático para centrar horizontalmente */
+    padding: 30px;                     /* Espacio interno */
+    background-color: #ffffff;         /* Fondo blanco */
+    border-radius: 8px;                /* Esquinas redondeadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  /* Título centrado */
+  .dashboard-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Texto de descripción */
+  .dashboard-container p {
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  /* Estilos de la lista */
+  .dashboard-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Cada ítem de la lista */
+  .dashboard-container li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  /* Eliminamos la línea en el último ítem */
+  .dashboard-container li:last-child {
+    border-bottom: none;
+  }

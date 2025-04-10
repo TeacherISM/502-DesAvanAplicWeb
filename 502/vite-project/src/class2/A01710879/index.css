@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados de Clase 1 */
+body {
+  margin: 0;
+  padding: 0;
+  /* Fondo degradado similar al de la Clase 1 */
+  background: linear-gradient(120deg, #e1f5fe, #fff9c4);
+  /* Usar la fuente Poppins */
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
