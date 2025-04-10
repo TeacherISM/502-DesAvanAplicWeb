@@ -1,0 +1,33 @@
+.travel-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.travel-form-container h1 {
+  margin-bottom: 20px;
+}
+
+.travel-input,
+.travel-textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.travel-textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
