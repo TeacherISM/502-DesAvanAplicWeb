@@ -5,7 +5,6 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [showIframe, setShowiframe] = useState(false)
 
   return (
     <>
@@ -26,13 +25,6 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-
-      <div className="card">
-        <a href="../src/class3/A01784465/ClaseMenu/index.html" target="_blank" rel="noopener noreferrer">
-          <button>Ir a class3/ClaseMenu/index.html</button>
-        </a>
-      </div>
-
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
