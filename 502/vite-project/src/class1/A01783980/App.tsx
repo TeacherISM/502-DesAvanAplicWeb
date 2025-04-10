@@ -1,21 +1,21 @@
+// src/App.tsx (SUGGESTION ONLY - don't modify if not allowed)
 import { useState } from "react";
-import "./../../App.css";
-import LoginFooter from "./LoginFooter.tsx"; // We'll create this component
-import reactLogo from "./../../assets/react.svg";
-import viteLogo from "/vite.svg";
+import "./App.css";
+import LoginFooter from "./LoginFooter.tsx";
+import Login from "./../../class2/A01783980/login.tsx";
+import Implementation from "./../../class3/A01783980/implementation.tsx";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [showLoginInfo, setShowLoginInfo] = useState(false);
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <img src="/react.svg" className="logo react" alt="React logo" />
         </a>
       </div>
       <h1>Vite + React + Emilio</h1>
@@ -28,26 +28,22 @@ function App() {
         </p>
       </div>
 
-      {/* Login button */}
-      <div className="card">
-        <button onClick={() => setShowLoginInfo(!showLoginInfo)}>
-          {showLoginInfo ? "Hide Login Info" : "Show Login Info"}
-        </button>
-        <a href="/src/class2/A1783980/index.html" className="login-link">
-          Go to Login Page
-        </a>
-        <a href="/hooks" className="login-link">
-          {" "}
-          React Hooks Demo
-        </a>
+      {/* Added component display areas */}
+      <div className="component-demo">
+        <LoginFooter />
+        <Login />
+        <Implementation />
+      </div>
+
+      <div className="action-buttons">
+        <button className="dark-button">Show Login Info</button>
+        <button className="blue-button">Go to Login Page</button>
+        <button className="blue-button">React Hooks Demo</button>
       </div>
 
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-
-      {/* Footer with ES6+ examples */}
-      {showLoginInfo && <LoginFooter />}
     </>
   );
 }
