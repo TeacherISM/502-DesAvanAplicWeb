@@ -17,7 +17,7 @@ root.render(
       {/* Botón de navegación para volver al menú principal */}
       <a href="/tareas">
         <button style={{ marginTop: "20px", padding: "10px 20px" }}>
-          Volver al Menú de Tareas
+          Menú de Tareas
         </button>
       </a>
     </main>

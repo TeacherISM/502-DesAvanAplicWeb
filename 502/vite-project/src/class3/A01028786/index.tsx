@@ -3,43 +3,52 @@ import ReactDOM from "react-dom/client";
 import Counter from "./Counter";
 import Login from "./Login";
 import TravelRequestForm from "./TravelRequestForm";
+import Dashboard from "./Dashboard";
 import "./App.css";
 
-// Componente principal de la aplicación
-const App = () => {
-  // Estado que determina qué vista se mostrará
-  const [pantalla, cambiarPantalla] = useState<"menu" | "counter" | "login" | "travel">("menu");
+type Pantalla = "menu" | "counter" | "login" | "travel" | "dashboard";
 
-  // Componente reutilizable para mostrar el botón de regreso al menú principal
+const App = () => {
+  const [pantalla, cambiarPantalla] = useState<Pantalla>("menu");
+  const [usuario, setUsuario] = useState<{ username: string; role: string } | null>(null);
+
+  const handleLogin = (username: string, password: string) => {
+    let role = "employee"; // default role
+    if (username === "admin") role = "admin";
+    else if (username === "manager") role = "manager";
+
+    setUsuario({ username, role });
+    cambiarPantalla("dashboard");
+  };
+
   const BotonVolverMenuGeneral = () => (
     <div className="tasks-menu-button">
       <a href="/tareas">
-        <button className="nav-button">Volver al Menú de Tareas</button>
+        <button className="nav-button">Menú de Tareas</button>
       </a>
     </div>
   );
 
-  // Vista principal con las opciones
   if (pantalla === "menu") {
     return (
       <div className="app-container">
-        <h1>Clase 3 - Hands-On</h1>
+        <h1>Clase 3</h1>
 
         <div className="button-container">
           <button onClick={() => cambiarPantalla("counter")} className="nav-button">
-            Contador - useState
+            Contador
           </button>
         </div>
 
         <div className="button-container">
           <button onClick={() => cambiarPantalla("login")} className="nav-button">
-            Login - useState & useEffect
+            Login y Dashboard Basado en Roles
           </button>
         </div>
 
         <div className="button-container">
           <button onClick={() => cambiarPantalla("travel")} className="nav-button">
-            Travel Request Form - useReducer
+            Travel Request Form
           </button>
         </div>
 
@@ -48,14 +57,13 @@ const App = () => {
     );
   }
 
-  // Vista del contador
   if (pantalla === "counter") {
     return (
       <div className="app-container">
         <Counter />
         <div className="button-container">
           <button onClick={() => cambiarPantalla("menu")} className="nav-button">
-            Volver al Menú Interno
+            Menú Clase 3
           </button>
         </div>
         <BotonVolverMenuGeneral />
@@ -63,14 +71,13 @@ const App = () => {
     );
   }
 
-  // Vista del login
   if (pantalla === "login") {
     return (
       <div className="app-container">
-        <Login />
+        <Login onLogin={handleLogin} />
         <div className="button-container">
           <button onClick={() => cambiarPantalla("menu")} className="nav-button">
-            Volver al Menú Interno
+            Menú Clase 3
           </button>
         </div>
         <BotonVolverMenuGeneral />
@@ -78,14 +85,13 @@ const App = () => {
     );
   }
 
-  // Vista del formulario de viaje
   if (pantalla === "travel") {
     return (
       <div className="app-container">
         <TravelRequestForm />
         <div className="button-container">
           <button onClick={() => cambiarPantalla("menu")} className="nav-button">
-            Volver al Menú de Clase 3
+            Menú de Clase 3
           </button>
         </div>
         <BotonVolverMenuGeneral />
@@ -93,10 +99,23 @@ const App = () => {
     );
   }
 
-  return null; // Fallback por si no coincide ninguna vista
+  if (pantalla === "dashboard" && usuario) {
+    return (
+      <div className="app-container">
+        <Dashboard role={usuario.role} />
+        <div className="button-container">
+          <button onClick={() => cambiarPantalla("menu")} className="nav-button">
+            Menú Clase 3
+          </button>
+        </div>
+        <BotonVolverMenuGeneral />
+      </div>
+    );
+  }
+
+  return null;
 };
 
-// Buscar el contenedor raíz y montar la aplicación React
 const nodoRaiz = document.getElementById("root");
 if (!nodoRaiz) throw new Error("No se encontró el elemento #root");
 

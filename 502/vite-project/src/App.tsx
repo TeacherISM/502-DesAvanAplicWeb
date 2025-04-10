@@ -24,9 +24,8 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
-        // Al final del return...
         <p style={{ marginTop: "40px", textAlign: "center" }}>
-          <a href="/tareas">Tareas Francisco Urquizo</a>
+          <button><a href="/tareas">Tareas Francisco Urquizo</a></button>
         </p>
       </div>
       <p className="read-the-docs">

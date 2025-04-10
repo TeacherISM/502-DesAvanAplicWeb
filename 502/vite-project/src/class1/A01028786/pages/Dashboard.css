@@ -13,3 +13,7 @@
   text-align: left;
   display: inline-block;
 }
+
+.data-container h2 {
+  text-align: center;
+}
