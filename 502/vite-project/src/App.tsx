@@ -28,6 +28,13 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <a
+        href="./class1/A01784613/index.html"
+        id="BrunoAvendano"
+        className="BrunoAvendano"
+      >
+        Clases de A01784613
+      </a>
     </>
   )
 }
