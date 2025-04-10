@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+.card-title {
+  margin-top: 40px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}

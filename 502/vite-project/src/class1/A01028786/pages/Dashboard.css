@@ -1,0 +1,19 @@
+.dashboard-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.fetch-button {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.data-container {
+  margin-top: 20px;
+  text-align: left;
+  display: inline-block;
+}
+
+.data-container h2 {
+  text-align: center;
+}

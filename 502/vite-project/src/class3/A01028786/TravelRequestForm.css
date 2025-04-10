@@ -1,0 +1,65 @@
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  color: #ffffff;
+}
+
+.form-container h1 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 12px 0;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+.textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  margin-top: 15px;
+}
+
+.submit-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
