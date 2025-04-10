@@ -28,6 +28,12 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <a
+        href="/src/class1/A01784116/menu/index.html"
+      >
+        Clases Tomas Molina
+      </a>
     </>
   )
 }
