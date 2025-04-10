@@ -24,6 +24,11 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+        <p>
+          <a href="/src/class1/A01025119/webpage/A01025119.html" target="_blank" rel="noopener noreferrer" >
+            Pagina de Do Kyu
+          </a>
+        </p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
