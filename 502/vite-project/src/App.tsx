@@ -35,7 +35,9 @@ function App() {
         <button>
         <a href="/src/class1/A01784521/menu/menu.html">Activities index</a>
         </button>
-
+        <a href="/src/menu/A01784177/index.html">
+          Menú
+        </a>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
