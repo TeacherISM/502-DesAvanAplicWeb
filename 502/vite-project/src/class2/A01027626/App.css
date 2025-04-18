@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  background-color: #1e1e1e;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+}
+
+.navigation-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.back-btn {
+  padding: 10px 20px;
+  background-color: #444;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #666;
+}
