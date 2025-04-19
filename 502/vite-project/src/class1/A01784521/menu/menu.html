@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Activities</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        
+        .menu-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .activities-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .activity-item {
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        
+        .activity-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        .activity-item a {
+            display: block;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .activity-item a:hover {
+            color: #2980b9;
+        }
+        
+        .inactive {
+            color: #95a5a6;
+            font-style: italic;
+            cursor: not-allowed;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #3498db;
+            color: white;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Course Activities</h1>
+        
+        <ul class="activities-list">
+            <li class="activity-item">
+                <span class="badge">Tarea 1</span>
+                <a href="/src/class1/A01784521/index.html">ES6+ Features Implementation</a>
+            </li>
+            <li class="activity-item">
+                <span class="badge">Tarea 2</span>
+                <a href="/src/class2/A01784521/index.html">React Fundamentals Workshop</a>
+            </li>
+            <li class="activity-item">
+                <span class="badge">Tarea 3</span>
+                <a href="/src/class3/A01784521/index.html">Introduction to React Hooks</a>
+            </li>
+            <li class="activity-item">
+                <span class="badge">Tarea 4</span>
+                <span class="inactive">Coming soon</span>
+            </li>
+            <li class="activity-item">
+                <span class="badge">Tarea 5</span>
+                <span class="inactive">Coming soon</span>
+            </li>
+        </ul>
+    </div>
+    
+    <footer>
+        <p>Advanced Web Application Development - 2025</p>
+    </footer>
+</body>
+</html>
