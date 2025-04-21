@@ -26,7 +26,7 @@ const ExerciseMenu = () => {
           </tr>
           <tr>
             <td style={{ border: '1px solid black', padding: '10px' }}>Clase 4</td>
-            <td style={{ border: '1px solid black', padding: '10px' }}><a href="/ejercicio4.html">Clase 4</a></td>
+            <td style={{ border: '1px solid black', padding: '10px' }}><a href="/src/class4/A01784107/index.html">Clase 4</a></td>
           </tr>
           <tr>
             <td style={{ border: '1px solid black', padding: '10px' }}>Clase 5</td>
