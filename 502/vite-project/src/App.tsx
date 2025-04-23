@@ -1,14 +1,14 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0)
   const navigateTo = (path: string) => {
     // You might want to use React Router instead of window.location
     window.location.href = path;
-};
-
+  };
 
   return (
     <>
@@ -49,7 +49,7 @@ function App() {
         </p>
       </div>
       <div>
-        <a href='/src/class2/A01784008/index.html' target="_blank" rel="noopener noreferrer">
+        <a href='/src/class3/A01784008/index.html' target="_blank" rel="noopener noreferrer">
           Leon Blanga Hasbani A01784008
         </a>
         <a href='/src/class1/A01781442/index.html'>
@@ -64,6 +64,7 @@ function App() {
         href="/src/class1/A01784116/menu/index.html"
       >
         Clases Tomas Molina
+      </a> {/* Closing tag added here */}
     </>
   );
 }
