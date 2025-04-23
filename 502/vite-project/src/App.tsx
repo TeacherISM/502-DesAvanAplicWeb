@@ -1,14 +1,15 @@
+import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
+
   const [count, setCount] = useState(0)
   const navigateTo = (path: string) => {
     // You might want to use React Router instead of window.location
     window.location.href = path;
 };
-
 
   return (
     <>
@@ -61,11 +62,19 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <a
+        href="/src/class1/A01782876/index.html"
+        id="marcosdayan"
+        className="marcosdayan"
+      >
+        Links Clases Marcos Dayan A01782876
+      </a>
+      <a
         href="/src/class1/A01784116/menu/index.html"
       >
         Clases Tomas Molina
+      </a>
     </>
   );
 }
 
-export default App
+export default App;

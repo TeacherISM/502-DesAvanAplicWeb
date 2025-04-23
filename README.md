@@ -13,6 +13,7 @@
 ## Nicolas Alarcon Panopoulou (DB/Backend)
 ## Alberto Limón Cancino (DB/Backend)
 ## a01784008:leon,blanga(DEVOPS_FRONTEND)
+## A01782876: marcos, dayan mann (backend/devops)
 
 
 
