@@ -9,6 +9,7 @@ export default function Navbar() {
         <li><a href="/src/class2/A01784008/index.html">Clase 2</a></li>
         <li><a href="/src/class3/A01784008/index.html">Clase 3</a></li>
         <li><a href="/src/class4/A01784008/index.html">Clase 4</a></li>
+        <li><a href="/src/class5/A01781442/index.html">Clase 5</a></li>
       </ul>
     </nav>
   );
