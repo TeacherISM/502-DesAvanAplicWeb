@@ -4,7 +4,6 @@ import Counter from './components/Counter';
 import UserData from './components/UserData';
 import TravelReducerForm from './components/TravelReducerForm.tsx';
 import Navbar from '../../class2/A01784008/components/NavbarLB';
-import '../../class2/A01784008/App.tsx';
 import './App.css';
 
 export default function App() {
