@@ -1,5 +1,7 @@
+
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -8,7 +10,6 @@ function App() {
     // You might want to use React Router instead of window.location
     window.location.href = path;
 };
-
 
   return (
     <>
@@ -22,7 +23,9 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-
+        <button>
+          <a href="src/class1/A01784107/menu/index.html">Menu de Joseph Shakalo</a>
+        </button>
         <button
           onClick={() => window.location.href = "/src/class3/A01782557/dashboard/index.html"}
         >
@@ -64,8 +67,11 @@ function App() {
         href="/src/class1/A01784116/menu/index.html"
       >
         Clases Tomas Molina
+      </a>
     </>
+
   );
+
 }
 
 export default App
