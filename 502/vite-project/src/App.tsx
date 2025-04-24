@@ -58,9 +58,6 @@ function App() {
             <p>Marcos Dayan Mann A01782876</p>
           </a>
         </div>
-        <a href='/src/class1/A01781442/index.html'>
-          Rafael Blanga Hanono A01781442
-        </a>
         <a href="src/class1/A01784238/menu/index.html">Menú de José Manuel García Zumaya</a>
       </div>
       <p className="read-the-docs">
