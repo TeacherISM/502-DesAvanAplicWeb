@@ -49,9 +49,15 @@ function App() {
         </p>
       </div>
       <div>
-        <a href='/src/class3/A01784008/index.html' target="_blank" rel="noopener noreferrer">
-          Leon Blanga Hasbani A01784008
-        </a>
+        <div style={{border: "1px solid white"}} >
+          <a href='/src/class3/A01784008/index.html' target="_blank" rel="noopener noreferrer">
+            <h3>Célula Equipo</h3>
+            <p>Leon Blanga Hasbani A01784008</p>
+            <p>Rafael Blanga Hanono A01781442</p>
+            <p>Emilio Ramírez Mascarúa A01783980</p>
+            <p>Marcos Dayan Mann A01782876</p>
+          </a>
+        </div>
         <a href='/src/class1/A01781442/index.html'>
           Rafael Blanga Hanono A01781442
         </a>
