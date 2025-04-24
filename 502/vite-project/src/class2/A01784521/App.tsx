@@ -202,8 +202,9 @@ interface GreetingProps {
 }
 
 function Greeting({ name }: GreetingProps) {
-  return <h1 style={styles.header}>React Components Workshop: Props & Composition</h1>;
+  return <h1 style={styles.header}>Hola, {name}! Bienvenida al taller de React</h1>;
 }
+
 
 // Main App Component
 function App() {
@@ -217,4 +218,6 @@ function App() {
   );
 }
 
+export { Button };
+export type { ButtonProps };
 export default App;
