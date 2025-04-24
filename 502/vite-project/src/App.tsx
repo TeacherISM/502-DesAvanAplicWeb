@@ -1,3 +1,4 @@
+
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -10,6 +11,7 @@ function App() {
 };
 
 
+
   return (
     <>
       <div>
@@ -20,8 +22,9 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Milestone 1</h1>
       <div className="card">
+
 
         <button
           onClick={() => window.location.href = "/src/class3/A01782557/dashboard/index.html"}
@@ -37,6 +40,7 @@ function App() {
         <a href="/src/menu/A01028038/index.html">
           Menú
         </a>
+
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
@@ -65,6 +69,7 @@ function App() {
       >
         Clases Tomas Molina
     </>
+
   );
 }
 
