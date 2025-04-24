@@ -4,15 +4,10 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-  const navigateTo = (path: string) => {
-    // You might want to use React Router instead of window.location
-    window.location.href = path;
-};
-
 
   return (
-    <>
+    <div>
+      <h1>Vite + React</h1>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -21,31 +16,28 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+
       <div className="card">
-
-        <button
-          onClick={() => window.location.href = "/src/class3/A01782557/dashboard/index.html"}
-        >
-        Dashboard
+        <button onClick={() => window.location.href = "/src/class3/A01782557/dashboard/index.html"}>
+        A01782557 Dashboard
         </button>
-
-        <button onClick={() => navigateTo("/src/class3/A01781321/index.html")}>
-          Class projects
+        <button onClick={() => window.location.href = "/src/class3/A01781321/index.html"}>
+        A01781321 Class projects
         </button>
         <button>
-        <a href="/src/class1/A01784521/menu/menu.html">Activities index</a>
-        <a href="/src/menu/A01028038/index.html">
-          Menú
-        </a>
+            <a href="/src/class1/A01784521/menu/menu.html">A01784521 Activities index</a>
+        </button>
+        <button>
+            <a href="/src/menu/A01028038/index.html">
+            A01028038 Menú
+            </a>
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        <p>
-          <a href='/src/class1/A01783637/Homework_Index/index.html'> Menu of Homeworks for Imanol Santisteban A01783637 </a>
+          <a href='/src/class1/A01783637/Homework_Index/index.html'>
+            Menu of Homeworks for Imanol Santisteban A01783637
+          </a>
           <a href="/src/class1/A01025119/webpage/A01025119.html" target="_blank" rel="noopener noreferrer" >
-            Pagina de Do Kyu
+          A01025119 Pagina de Do Kyu
           </a>
         </p>
       </div>
@@ -56,8 +48,9 @@ function App() {
         <a href='/src/class1/A01781442/index.html'>
           Rafael Blanga Hanono A01781442
         </a>
-        <a href="src/class1/A01784238/menu/index.html">Menú de José Manuel García Zumaya</a>
+        <a href="src/class1/A01784238/menu/index.html">A01784238 Menú de José Manuel García Zumaya</a>
       </div>
+
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
@@ -68,6 +61,20 @@ function App() {
     </a>
   </>
   );
+
+      <a href="/src/class1/A01784116/menu/index.html">
+      A01784116 Clases Tomas Molina
+      </a>
+        <a
+          href="/src/class1/A01782146/explorador/index.html"
+          id="gabrieledid"
+          className="gabrieledid"
+        >
+          A01782146 Ir a trabajos de Gabriel Edid
+        </a>
+    </div>
+  )
+
 }
 
 export default App
