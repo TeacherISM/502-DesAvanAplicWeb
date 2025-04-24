@@ -8,6 +8,7 @@ function App() {
     { title: 'Class 1', href: '/src/class1/A01028415/index.html' },
     { title: 'Class 2', href: '/src/class2/A01028415/index.html' },
     { title: 'Class 3', href: '/src/class3/A01028415/index.html' },
+    { title: 'Class 4', href: '/src/class4/A01784045/index.html' },
   ]
 
   return (
