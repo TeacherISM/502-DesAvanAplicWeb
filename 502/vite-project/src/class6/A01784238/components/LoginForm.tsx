@@ -201,12 +201,12 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
           borderRadius: "8px",
         }}
       >
-        <h3>Login</h3>
+        <h3>Inicio de sesión</h3>
 
         {/* Campo de entrada para el nombre de usuario/email */}
         <InputField
           type="text"
-          placeholder="Email"
+          placeholder="Correo electrónico"
           value={username}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             dispatch({ type: "SET_USERNAME", payload: e.target.value })
@@ -223,7 +223,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
         {/* Campo de entrada para la contraseña */}
         <InputField
           type="password"
-          placeholder="Password"
+          placeholder="Contraseña"
           value={password}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             dispatch({ type: "SET_PASSWORD", payload: e.target.value })
@@ -245,7 +245,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
         )}
 
         {/* Botón de envío del formulario */}
-        <Button label="Login" type="submit" />
+        <Button label="Entrar" type="submit" />
       </div>
     </form>
   );
