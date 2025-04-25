@@ -1,48 +1,67 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 
-type User = {
+interface User {
+  email: string;
+  password: string;
   role: 'employee' | 'manager' | 'admin';
-};
+  name: string;
+}
 
-type UserContextType = {
-  user: User;
-  login: (role: User['role']) => void;
+interface AuthContextType {
+  user: User | null;
+  isAuthenticated: boolean;
+  error: string | null;
+  login: (email: string, password: string) => Promise<void>;
   logout: () => void;
-};
+}
 
-const defaultUser: User = { role: 'employee' };
+const UserContext = createContext<AuthContextType | undefined>(undefined);
 
-export const UserContext = createContext<UserContextType>({
-  user: defaultUser,
-  login: () => {},
-  logout: () => {},
-});
+const mockUsers: User[] = [
+  { email: 'test@test.com', password: 'test', role: 'admin', name: 'Admin User' },
+  { email: 'manager@test.com', password: 'test', role: 'manager', name: 'Manager User' },
+  { email: 'employee@test.com', password: 'test', role: 'employee', name: 'Employee User' },
+];
 
-export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User>(defaultUser);
+function loginApi(email: string, password: string): Promise<User> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const user = mockUsers.find(u => u.email === email && u.password === password);
+      user ? resolve(user) : reject(new Error('Invalid email or password'));
+    }, 800);
+  });
+}
 
-  useEffect(() => {
-    const savedRole = localStorage.getItem('userRole');
-    if (savedRole === 'employee' || savedRole === 'manager' || savedRole === 'admin') {
-      setUser({ role: savedRole });
+export function UserProvider({ children }: { children: ReactNode }) {
+  const [user, setUser] = useState<User | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const login = async (email: string, password: string) => {
+    try {
+      const user = await loginApi(email, password);
+      setUser(user);
+      setError(null);
+    } catch {
+      setError('Invalid email or password');
     }
-  }, []);
-
-  const login = (role: User['role']) => {
-    setUser({ role });
-    localStorage.setItem('userRole', role);
   };
 
   const logout = () => {
-    setUser(defaultUser);
-    localStorage.removeItem('userRole');
+    setUser(null);
+    setError(null);
   };
 
   return (
-    <UserContext.Provider value={{ user, login, logout }}>
+    <UserContext.Provider value={{ user, isAuthenticated: !!user, error, login, logout }}>
       {children}
     </UserContext.Provider>
   );
-};
+}
 
-export const useUser = () => useContext(UserContext);
+export function useUser() {
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error('useUser must be used within a UserProvider');
+  }
+  return context;
+}
