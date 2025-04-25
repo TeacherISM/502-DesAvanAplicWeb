@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <h1>Classes Menu Emiliano Romero</h1>
+      <h1>Classes Menu Emiliano Romero, José Manuel Zumaya, Isaac Shakalo, Felipe de Araujo</h1>
       <div className="card-container">
         {classLinks.map(({ title, href }) => (
           <a
