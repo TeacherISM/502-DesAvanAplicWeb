@@ -50,6 +50,7 @@ const styles = {
     color: '#ef4444',
     marginTop: '8px',
     fontSize: '14px',
+    textAlign: 'center', // Added for error message container
   },
   note: {
     marginTop: '20px',
@@ -118,10 +119,13 @@ const styles = {
 // Tipos
 interface User {
   email: string;
-  password: string;
+  password: string; // Note: Storing passwords in a real app is insecure. This is for mock purposes only.
   role: 'employee' | 'manager' | 'admin';
   name: string;
 }
+
+// Added possible view states
+type AppView = 'login' | 'dashboard' | 'adminOnly' | 'noAccess';
 
 interface AuthContextType {
   user: User | null;
@@ -154,12 +158,13 @@ function UserProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null);
 
   const login = async (email: string, password: string) => {
+    setError(null); // Clear previous errors
     try {
       const user = await loginApi(email, password);
       setUser(user);
-      setError(null);
-    } catch {
-      setError('Invalid email or password');
+    } catch (e: any) { // Catch any error during login
+      setError(e.message || 'Login failed');
+      setUser(null); // Ensure user is null on failed login
     }
   };
 
@@ -299,7 +304,53 @@ function EmployeeDashboard({ user }: { user: User }) {
   );
 }
 
-function Dashboard({ user, onLogout }: { user: User; onLogout: () => void }) {
+// New component for Admin-only page
+function AdminOnlyPage({ user, onBack }: { user: User; onBack: () => void }) {
+  return (
+    <div style={styles.container}>
+       <div style={styles.header}>
+        <h2 style={styles.title}>Admin Exclusive Page</h2>
+         <button onClick={onBack} style={{...styles.navButton, backgroundColor: '#fca5a5'}}>Back to Dashboard</button>
+       </div>
+      <div style={styles.card}>
+        <h3>Confidential Admin Information</h3>
+        <p>Welcome {user.name}. This content is only accessible if your role is 'admin'.</p>
+        <ul>
+            <li>Sensitive System Logs</li>
+            <li>Critical Configuration Settings</li>
+            <li>User Access Control</li>
+        </ul>
+        <p>If you are seeing this, your role is indeed '{user.role}'.</p>
+      </div>
+       <div style={{textAlign: 'center', marginTop: '20px'}}>
+        <button onClick={onBack} style={{...styles.button, width: 'auto'}}>Back to Dashboard</button>
+       </div>
+    </div>
+  );
+}
+
+// New component for No Access page
+function NoAccessPage({ user, onBack }: { user: User | null; onBack: () => void }) {
+  return (
+    <div style={styles.container}>
+      <div style={styles.header}>
+        <h2 style={{...styles.title, color: styles.error.color}}>Access Denied</h2>
+        <button onClick={onBack} style={{...styles.navButton, backgroundColor: '#fca5a5'}}>Go Back</button>
+      </div>
+      <div style={styles.card}>
+        <p>Hello {user ? user.name : 'Guest'}, you do not have the required role to view this page.</p>
+        {user && <p>Your current role is '{user.role}'. This page requires the 'admin' role.</p>}
+      </div>
+      <div style={{textAlign: 'center', marginTop: '20px'}}>
+         <button onClick={onBack} style={{...styles.button, width: 'auto'}}>Go Back</button>
+      </div>
+    </div>
+  );
+}
+
+
+// Modified Dashboard component to include the button
+function Dashboard({ user, onLogout, onNavigateToAdminPage }: { user: User; onLogout: () => void; onNavigateToAdminPage: () => void }) {
   let dashboardContent;
   switch (user.role) {
     case 'admin':
@@ -318,6 +369,13 @@ function Dashboard({ user, onLogout }: { user: User; onLogout: () => void }) {
         <h1 style={{ margin: 0 }}>Company Portal</h1>
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <div>Welcome, {user.name} ({user.role})</div>
+          {/* Button visible to all, but logic protects access */}
+          <button
+            onClick={onNavigateToAdminPage}
+            style={{...styles.navButton, backgroundColor: '#d1fae5', color: '#065f46'}}
+          >
+             Admin Area (Admins Only)
+          </button>
           <button onClick={onLogout} style={{
             padding: '8px 12px',
             backgroundColor: '#f3f4f6',
@@ -332,26 +390,73 @@ function Dashboard({ user, onLogout }: { user: User; onLogout: () => void }) {
   );
 }
 
-// App principal
+// App principal - Modified to handle different views
 function MainApp() {
   const { user, isAuthenticated, login, logout, error } = useUser();
+  const [currentView, setCurrentView] = useState<AppView>('login');
 
-  return (
-    <div>
-      {isAuthenticated && user ? (
-        <Dashboard user={user} onLogout={logout} />
-      ) : (
+  // Effect to manage view state based on authentication status
+  useEffect(() => {
+    if (isAuthenticated) {
+      // If logged in, go to dashboard view
+      setCurrentView('dashboard');
+    } else {
+      // If logged out, go to login view
+      setCurrentView('login');
+    }
+  }, [isAuthenticated]); // Re-run effect when authentication status changes
+
+  // Handler for attempting to navigate to the admin page
+  const handleNavigateToAdmin = () => {
+    if (user?.role === 'admin') {
+      setCurrentView('adminOnly');
+    } else {
+      setCurrentView('noAccess');
+    }
+  };
+
+  // Handler to return to the dashboard view
+  const handleBackToDashboard = () => {
+    setCurrentView('dashboard');
+  };
+
+  // --- Render logic based on currentView state ---
+  switch (currentView) {
+    case 'login':
+      return (
         <div style={styles.container}>
           <LoginForm onLogin={login} />
           {error && (
-            <div style={{ ...styles.loginContainer, ...styles.error, marginTop: '20px' }}>
+             // Using loginContainer style for error message placement consistency
+            <div style={{ ...styles.loginContainer, ...styles.error, marginTop: '20px', padding: '10px 30px' }}>
               {error}
             </div>
           )}
         </div>
-      )}
-    </div>
-  );
+      );
+
+    case 'dashboard':
+      // Ensure user exists before rendering Dashboard (isAuthenticated check above helps, but good practice)
+      if (!user) return null; // Should not happen if isAuthenticated is true
+      return <Dashboard user={user} onLogout={logout} onNavigateToAdminPage={handleNavigateToAdmin} />;
+
+    case 'adminOnly':
+       // Ensure user exists before rendering AdminOnlyPage
+       if (!user) {
+           // If somehow user is null here, redirect back to login or no access page
+           setCurrentView('noAccess'); // Or 'login'
+           return null;
+       }
+      return <AdminOnlyPage user={user} onBack={handleBackToDashboard} />;
+
+    case 'noAccess':
+      // User might still exist on the no access page if they were logged in with wrong role
+      return <NoAccessPage user={user} onBack={handleBackToDashboard} />;
+
+    default:
+       // Fallback - perhaps show login or dashboard
+       return <div style={styles.container}>Unknown view</div>; // Simple fallback
+  }
 }
 
 export default function Implementation() {
