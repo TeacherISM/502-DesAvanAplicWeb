@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #f0f4ff, #ede9fe);
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Este contenedor se queda centrado horizontalmente y crece en altura */
+  .clase1-container {
+    width: 100%;
+    max-width: 720px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Título principal */
+  .clase1-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #4c1d95;
+  }
+  
+  /* Secciones con sombra y borde redondeado */
+  .clase1-section {
+    background-color: #fff;
+    padding: 24px 30px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Código resaltado */
+  .code {
+    background-color: #f3e8ff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-family: monospace;
+    color: #4b0082;
+  }
+  
+  /* Fila de datos */
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 1rem;
+  }
+  
+  .data-row span {
+    font-weight: bold;
+    color: #6b21a8;
+  }
+  
+  .clase1-btn {
+    background-color: #9333ea;
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .clase1-btn:hover {
+    background-color: #7e22ce;
+  }
+  
+  .info {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
