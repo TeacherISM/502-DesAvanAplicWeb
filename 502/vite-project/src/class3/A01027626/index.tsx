@@ -19,7 +19,7 @@ const App = () => {
 
   const TasksMenuButton = () => (
     <div className="tasks-menu-button">
-      <a href="/tareas">
+      <a href="/src/class1/A01027626/menu/menu.html">
         <button className="nav-button">Back to Main Menu</button>
       </a>
     </div>

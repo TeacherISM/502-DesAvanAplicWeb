@@ -25,7 +25,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
         <p style={{ marginTop: "40px", textAlign: "center" }}>
-          <a href="/tareas">Tasks Paúl Araque</a>
+          <a href="/src/class1/A01027626/menu/menu.html">Tasks Paúl Araque</a>
         </p>
       </div>
       <p className="read-the-docs">

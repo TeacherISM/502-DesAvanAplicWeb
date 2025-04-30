@@ -19,7 +19,7 @@ const App: React.FC = () => {
     <div className="app-container">
       {authenticated ? <Dashboard /> : <Login onLogin={handleLogin} />}
       <div className="navigation-container">
-        <a href="/tareas">
+        <a href="/src/class1/A01027626/menu/menu.html">
           <button className="back-btn">Back to Main Menu</button>
         </a>
       </div>

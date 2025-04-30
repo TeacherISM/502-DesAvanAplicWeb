@@ -9,7 +9,10 @@ root.render(
   <React.StrictMode>
     <div>
       <Login />
-      <a href="/tareas" className="navigation-container">
+      <a
+        href="/src/class1/A01027626/menu/menu.html"
+        className="navigation-container"
+      >
         <button className="back-btn">Back to Main Menu</button>
       </a>
     </div>
