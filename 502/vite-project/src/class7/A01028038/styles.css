@@ -115,6 +115,14 @@ button:active, .menu:active, .logout:active {
 
 .messages{
     min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+    max-height: 500px;
+    overflow-y: scroll;
+    
+
 }
 
 .menu{
