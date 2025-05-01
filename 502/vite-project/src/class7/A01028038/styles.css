@@ -97,6 +97,26 @@ button:active, .menu:active, .logout:active {
     box-shadow: 0 3px 10px rgba(67, 160, 71, 0.2);
 }
 
+.clients{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.client{
+    min-width: 600px;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.heading-client{
+    margin-bottom: 20px;
+}
+
+.messages{
+    min-height: 100px;
+}
+
 .menu{
     background: #fff;
     color: #43a047;
