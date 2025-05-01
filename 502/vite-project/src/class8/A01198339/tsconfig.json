@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "esModuleInterop": true,
+      "allowJs": true,
+      "types": ["jest"]
+    },
+    "include": ["**/*.ts", "**/*.tsx"]
+  }
+  
