@@ -23,6 +23,9 @@ export default function Navbar() {
         <li>
           <a href="/src/class6/A01782876/index.html">Clase 6</a>
         </li>
+        <li>
+          <a href="/src/class7/A01782876/index.html">Clase 7</a>
+        </li>
       </ul>
     </nav>
   );
