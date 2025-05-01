@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, FormEvent, ReactNode } from 'react';
+import Notificacions from '../components/Notificacions'
+import { closeWebSocket } from '../websocket';
 
 // Estilos
 const styles = {
@@ -50,7 +52,7 @@ const styles = {
     color: '#ef4444',
     marginTop: '8px',
     fontSize: '14px',
-    textAlign: 'center', // Added for error message container
+    textAlign: 'center' as const, // Added for error message container
   },
   note: {
     marginTop: '20px',
@@ -169,6 +171,7 @@ function UserProvider({ children }: { children: ReactNode }) {
   };
 
   const logout = () => {
+    closeWebSocket();
     setUser(null);
     setError(null);
   };
@@ -292,10 +295,25 @@ function EmployeeDashboard({ user }: { user: User }) {
           <button style={styles.navButton}>Profile</button>
         </div>
       </div>
+
+      {/* 🔔 Notificaciones en tiempo real */}
+      <Notificacions user={user} />
+
       <div style={styles.grid}>
-        <div style={styles.card}><div style={styles.stat}><div style={styles.statNumber}>5</div><div style={styles.statLabel}>Pending Tasks</div></div></div>
-        <div style={styles.card}><div style={styles.stat}><div style={styles.statNumber}>3</div><div style={styles.statLabel}>Completed Today</div></div></div>
+        <div style={styles.card}>
+          <div style={styles.stat}>
+            <div style={styles.statNumber}>5</div>
+            <div style={styles.statLabel}>Pending Tasks</div>
+          </div>
+        </div>
+        <div style={styles.card}>
+          <div style={styles.stat}>
+            <div style={styles.statNumber}>3</div>
+            <div style={styles.statLabel}>Completed Today</div>
+          </div>
+        </div>
       </div>
+
       <div style={styles.card}>
         <h3>Your Tasks</h3>
         <p>Welcome {user.name}. Here are your assigned tasks.</p>
@@ -303,6 +321,7 @@ function EmployeeDashboard({ user }: { user: User }) {
     </div>
   );
 }
+
 
 // New component for Admin-only page
 function AdminOnlyPage({ user, onBack }: { user: User; onBack: () => void }) {
