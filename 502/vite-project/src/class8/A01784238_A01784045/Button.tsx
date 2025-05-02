@@ -1,29 +1,39 @@
 import React from "react";
 
-// Define correct types for button props
-type ButtonProps = {
+interface ButtonProps {
   label: string;
   onClick?: () => void;
-  type?: "button" | "submit" | "reset"; // Restrict to allowed values
-  className?: string;
+  type?: "button" | "submit" | "reset";
   disabled?: boolean;
-};
+  className?: string;
+}
 
 const Button: React.FC<ButtonProps> = ({
   label,
   onClick,
-  type = "button", // Default to "button"
-  className = "",
+  type = "button",
   disabled = false,
-  ...props
+  className = "",
 }) => {
   return (
     <button
-      onClick={onClick}
       type={type}
-      className={className}
+      onClick={onClick}
       disabled={disabled}
-      {...props}
+      className={className}
+      style={{
+        backgroundColor: "#3498db",
+        color: "white",
+        padding: "10px 15px",
+        border: "none",
+        borderRadius: "4px",
+        cursor: disabled ? "not-allowed" : "pointer",
+        opacity: disabled ? 0.7 : 1,
+        fontSize: "14px",
+        fontWeight: "bold",
+        transition: "background-color 0.3s",
+        width: "100%",
+      }}
     >
       {label}
     </button>
