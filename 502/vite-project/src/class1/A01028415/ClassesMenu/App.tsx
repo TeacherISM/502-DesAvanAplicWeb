@@ -12,6 +12,8 @@ function App() {
     { title: 'Class 4', href: '/src/class4/A01784045/index.html' },
     { title: 'Class 5', href: '/src/class5/A01784465/index.html' },
     { title: "Class 6", href: "/src/class6/A01784238/index.html" },
+    { title: "Class 7", href: "/src/class7/A01028415/index.html" },
+
   ];
 
 
