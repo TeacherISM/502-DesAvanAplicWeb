@@ -3,8 +3,8 @@
       "jsx": "react",
       "esModuleInterop": true,
       "allowJs": true,
-      "types": ["jest"]
+      "types": ["jest","cypress"],
     },
-    "include": ["**/*.ts", "**/*.tsx"]
+    "include": ["**/*.ts", "**/*.tsx", "cypress/**/*.ts", "cypress/**/*.tsx"],
   }
   

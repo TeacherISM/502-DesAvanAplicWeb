@@ -15,9 +15,9 @@ const Dashboard = ({ role }: { role: string }) => {
   return (
     <>
       <h1>Dashboard</h1>
-      {role === "admin" && <p>Welcome, Admin!</p>}
-      {role === "manager" && <p>Welcome, Manager!</p>}
-      {role === "employee" && <p>Welcome, Employee!</p>}
+      {role === "admin" && <p data-cy="welcome">Welcome, Admin!</p>}
+      {role === "manager" && <p data-cy="welcome">Welcome, Manager!</p>}
+      {role === "employee" && <p data-cy="welcome">Welcome, Employee!</p>}
       <h2> With Render Props Component</h2>
       <ApiFetcher
         render={({ posts, loading, error }: any) => {
