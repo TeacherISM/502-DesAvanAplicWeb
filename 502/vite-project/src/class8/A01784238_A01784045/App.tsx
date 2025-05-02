@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import JestPage from "./pages/JestPage";
 import CypressPage from "./pages/CypressPage";
 import LoginPage from "./pages/LoginPage";
+import TravelFormPage from "./pages/TravelFormPage";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
             />
           }
         />
+        <Route path="/cypress/travel-form" element={<TravelFormPage />} />
         <Route path="/" element={<JestPage />} />
       </Routes>
     </div>

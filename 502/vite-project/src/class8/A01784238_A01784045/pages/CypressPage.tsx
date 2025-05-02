@@ -1,7 +1,5 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
-import LoginPage from "./LoginPage";
-// import TravelFormPage from "./TravelFormPage";
 
 const CypressPage: React.FC = () => {
   return (
@@ -20,18 +18,6 @@ const CypressPage: React.FC = () => {
           </li>
         </ul>
       </nav>
-
-      <Routes>
-        <Route
-          path="login"
-          element={
-            <LoginPage
-              onLogin={(username) => console.log(`Logged in as: ${username}`)}
-            />
-          }
-        />
-        {/* <Route path="travel-form" element={<TravelFormPage />} /> */}
-      </Routes>
     </div>
   );
 };

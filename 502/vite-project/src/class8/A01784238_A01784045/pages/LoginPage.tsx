@@ -125,7 +125,11 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
               />
             </div>
             {error && (
-              <div className="error" style={{ color: "red", margin: "8px 0" }}>
+              <div
+                data-testid="cypress-error-text"
+                className="error"
+                style={{ color: "red", margin: "8px 0" }}
+              >
                 {error}
               </div>
             )}
