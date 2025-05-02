@@ -24,9 +24,6 @@ const Client = ({ id }: { id: number }) => {
             const messageId =  response.id;
             
             setMessages((prevNotifications) => [...prevNotifications, { id: messageId, message }]);
-            if (messagesRef.current) {
-                messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
-            }
         };
     
         return () => {
@@ -36,6 +33,16 @@ const Client = ({ id }: { id: number }) => {
             ws.current?.close();
         };
     }, []);
+
+    useEffect(() => {
+        if (messagesRef.current) {
+            // Scroll to the bottom of the messages div
+            messagesRef.current.scrollTo({
+                top: messagesRef.current.scrollHeight + messagesRef.current.clientHeight,
+                behavior: 'smooth',
+            });
+        }
+    }, [messages]);
 
     const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
