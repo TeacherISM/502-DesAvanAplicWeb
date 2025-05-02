@@ -1,16 +1,30 @@
-import Button from "./Button";
-import TravelForm from "./TravelForm";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import JestPage from "./pages/JestPage";
+import CypressPage from "./pages/CypressPage";
+
 const App = () => {
   return (
-    <div>
-      <h1>Class 8</h1>
-      <h2>A01784238 - A01784045</h2>
-      <p>Welcome to the class 8 project!</p>
-      <p>Button</p>
-      <Button label="Click Me!" onClick={() => alert("Button clicked!")} />
-      <p>Travel Form</p>
-      <TravelForm />
-    </div>
+    <Router>
+      <div className="container">
+        <nav>
+          <ul style={{ display: "flex", listStyle: "none", gap: "20px" }}>
+            <li>
+              <Link to="/jest">Jest Testing</Link>
+            </li>
+            <li>
+              <Link to="/cypress">Cypress Testing</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/jest" element={<JestPage />} />
+          <Route path="/cypress" element={<CypressPage />} />
+          <Route path="/" element={<JestPage />} /> {/* Default route */}
+        </Routes>
+      </div>
+    </Router>
   );
 };
+
 export default App;

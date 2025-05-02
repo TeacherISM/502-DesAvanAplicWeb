@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/jest-globals";
 import { render, fireEvent } from "@testing-library/react";
 import { test, expect } from "@jest/globals";
-import TravelForm from "./TravelForm";
+import TravelForm from "./components/TravelForm";
 
 test("Renders the TravelForm component", () => {
   const { getByLabelText, getByText } = render(<TravelForm />);

@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/jest-globals";
 import { render, screen } from "@testing-library/react";
 import { test, expect, jest } from "@jest/globals";
-import Button from "./Button";
+import Button from "./components/Button";
 
 test("Renders Button component", () => {
   render(<Button label="Click Me!" />);
