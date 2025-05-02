@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import TravelRequestForm from '../hoc/TravelRequestForm';
+
 
 // HOC: withLogging
 function withLogging<P extends object>(
@@ -19,7 +21,7 @@ interface ButtonProps {
   fullWidth?: boolean;
 }
 
-function Button({
+export function Button({
   label,
   type = 'button',
   variant,
@@ -163,53 +165,60 @@ function App() {
   const { data: hookData, loading: hookLoading, error: hookError } =
     useFetch<User>('https://jsonplaceholder.typicode.com/users/2');
 
-  return (
-    <div style={outerContainer}>
-      <div style={mainCard}>
-        <h1 style={titleStyle}>Clase 4 - Milestone 2</h1>
-
-        {/* HOC Card */}
-        <div style={activityCard}>
-          <h2 style={sectionTitle}>Higher-Order Component (HOC)</h2>
-          <ButtonWithLogging
-            label="Click aquí"
-            variant="primary"
-            onClick={() => alert('Click registrado!')}
-          />
-        </div>
-
-        {/* Render Props Card */}
-        <div style={activityCard}>
-          <h2 style={sectionTitle}>Render Props</h2>
-          <DataFetcher url="https://jsonplaceholder.typicode.com/users/1">
-            {({ data, loading, error }) => {
-              if (loading) return <p style={{ color: '#888' }}>Cargando...</p>;
-              if (error) return <p style={{ color: 'red' }}>Error: {error.message}</p>;
-              return (
-                <div>
-                  <p><strong>Nombre:</strong> {data?.name}</p>
-                  <p><strong>Email:</strong> {data?.email}</p>
-                </div>
-              );
-            }}
-          </DataFetcher>
-        </div>
-
-        {/* Custom Hook Card */}
-        <div style={activityCard}>
-          <h2 style={sectionTitle}>Custom Hook</h2>
-          {hookLoading && <p style={{ color: '#888' }}>Cargando...</p>}
-          {hookError && <p style={{ color: 'red' }}>Error: {hookError.message}</p>}
-          {hookData && (
-            <div>
-              <p><strong>Nombre:</strong> {hookData.name}</p>
-              <p><strong>Email:</strong> {hookData.email}</p>
-            </div>
-          )}
+    return (
+      <div style={outerContainer}>
+        <div style={mainCard}>
+          <h1 style={titleStyle}>Clase 4 - Milestone 2</h1>
+    
+          {/* HOC Card */}
+          <div style={activityCard}>
+            <h2 style={sectionTitle}>Higher-Order Component (HOC)</h2>
+            <ButtonWithLogging
+              label="Click aquí"
+              variant="primary"
+              onClick={() => alert('Click registrado!')}
+            />
+          </div>
+    
+          {/* Render Props Card */}
+          <div style={activityCard}>
+            <h2 style={sectionTitle}>Render Props</h2>
+            <DataFetcher url="https://jsonplaceholder.typicode.com/users/1">
+              {({ data, loading, error }) => {
+                if (loading) return <p style={{ color: '#888' }}>Cargando...</p>;
+                if (error) return <p style={{ color: 'red' }}>Error: {error.message}</p>;
+                return (
+                  <div>
+                    <p><strong>Nombre:</strong> {data?.name}</p>
+                    <p><strong>Email:</strong> {data?.email}</p>
+                  </div>
+                );
+              }}
+            </DataFetcher>
+          </div>
+    
+          {/* Custom Hook Card */}
+          <div style={activityCard}>
+            <h2 style={sectionTitle}>Custom Hook</h2>
+            {hookLoading && <p style={{ color: '#888' }}>Cargando...</p>}
+            {hookError && <p style={{ color: 'red' }}>Error: {hookError.message}</p>}
+            {hookData && (
+              <div>
+                <p><strong>Nombre:</strong> {hookData.name}</p>
+                <p><strong>Email:</strong> {hookData.email}</p>
+              </div>
+            )}
+          </div>
+    
+          {/* Travel Request Form Card */}
+          <div style={activityCard}>
+            <h2 style={sectionTitle}>Travel Request Form</h2>
+            <TravelRequestForm />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+    
 }
 
 export default App;
