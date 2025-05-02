@@ -1,36 +1,24 @@
-import WebSocket, { WebSocketServer } from 'ws'
+import * as WebSocket from 'ws';
+const WebSocketServer = WebSocket.Server;
 
-const wss = new WebSocketServer({ port: 8080 })
+
+const wss = new WebSocketServer({ port: 8080 });
 
 wss.on('connection', (ws) => {
-  console.log('New client connected')
+  console.log('🔌 Nuevo cliente conectado');
 
   ws.on('message', (message) => {
-    console.log(`Received: ${message}`)
-  })
+    console.log(` Recibido: ${message}`);
 
-  ws.on('close', () => {
-    console.log('Client disconnected')
-  })
-})
+    // Reenvía a todos los clientes
+    wss.clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(message.toString());
+      }
+    });
+  });
 
-const sendApprovalNotification = (employeeId: string, requestId: string) => {
-  const message = JSON.stringify({
-    type: 'approval',
-    employeeId,
-    requestId,
-    message: 'Your travel request has been approved.',
-  })
+  ws.on('close', () => console.log('Cliente desconectado'));
+});
 
-  wss.clients.forEach((client) => {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(message)
-    }
-  })
-}
-
-setTimeout(() => {
-  sendApprovalNotification('A12345', 'REQ-987')
-}, 5000)
-
-console.log('WebSocket server is running on ws://localhost:8080')
+console.log('WebSocket server running on ws://localhost:8080');
