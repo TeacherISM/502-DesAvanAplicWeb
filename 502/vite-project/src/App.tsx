@@ -1,8 +1,14 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0)
+  const navigateTo = (path: string) => {
+    // You might want to use React Router instead of window.location
+    window.location.href = path;
+  };
 
   return (
     <div>
@@ -41,14 +47,26 @@ function App() {
         </p>
       </div>
       <div>
-        <a href='/src/class2/A01784008/index.html' target="_blank" rel="noopener noreferrer">
-          Leon Blanga Hasbani A01784008
-        </a>
-        <a href='/src/class1/A01781442/index.html'>
-          Rafael Blanga Hanono A01781442
-        </a>
-        <a href="src/class1/A01784238/menu/index.html">A01784238 Menú de José Manuel García Zumaya</a>
+        <div style={{border: "1px solid white"}} >
+          <a href='/src/class3/A01784008/index.html' target="_blank" rel="noopener noreferrer">
+            <h3>Célula Equipo</h3>
+            <p>Leon Blanga Hasbani A01784008</p>
+            <p>Rafael Blanga Hanono A01781442</p>
+            <p>Emilio Ramírez Mascarúa A01783980</p>
+            <p>Marcos Dayan Mann A01782876</p>
+          </a>
+        </div>
+        <a href="src/class1/A01784238/menu/index.html">Menú de José Manuel García Zumaya</a>
       </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+      <a
+        href="/src/class1/A01784116/menu/index.html"
+      >
+        Clases Tomas Molina
+      </a> {/* Closing tag added here */}
+      <a href="src/class1/A01784238/menu/index.html">A01784238 Menú de José Manuel García Zumaya</a>
       <a href="/src/class1/A01784116/menu/index.html">
       A01784116 Clases Tomas Molina
       </a>
@@ -60,7 +78,8 @@ function App() {
           A01782146 Ir a trabajos de Gabriel Edid
         </a>
     </div>
-  )
+  );
+
 }
 
 export default App

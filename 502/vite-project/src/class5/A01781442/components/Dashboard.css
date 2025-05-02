@@ -1,0 +1,106 @@
+.dashboard-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .dashboard-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .dashboard-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .dashboard-container h3 {
+    font-size: 1.25rem;
+    margin: 2rem 0 1rem;
+    font-weight: 500;
+    text-align: left;
+  }
+  
+  .travel-section {
+    margin-bottom: 2rem;
+  }
+  
+  .travel-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+    text-align: left;
+  }
+  
+  .travel-list li {
+    background-color: #ffffff;
+    margin-bottom: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Formularios */
+  .form-wrapper, .form-section, form {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+    text-align: left;
+  }
+  
+  .form-wrapper h2, .form-section h2, form h1 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .form-wrapper textarea, form textarea,
+  input[type="text"], input[type="date"], input[type="number"], textarea {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  button {
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .text-red-500 {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .border-red-500 {
+    border-color: #e53e3e !important;
+  }
+  
+  .border-gray-300 {
+    border-color: #d1d5db;
+  }
+  
