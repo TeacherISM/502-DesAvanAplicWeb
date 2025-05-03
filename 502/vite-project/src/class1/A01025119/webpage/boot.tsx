@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { A01025119 } from './dokyu_main';
+import { A01025119 } from './main_page';
 
 const rootElement = document.querySelector('#A01025119');
 

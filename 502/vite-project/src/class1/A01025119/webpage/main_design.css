@@ -71,10 +71,32 @@ textarea {
   text-decoration: none;
   margin-top: 16px;
   transition: background-color 0.3s ease-in-out;
+  white-space: nowrap;
 }
 
 .main-button:hover {
   background-color: #d11a35;
   color: white;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+  gap: 12px; /* space between buttons */
+  width: 80%; /* or 100%, adjust depending on your design */
+  max-width: 1000px; /* limit it a bit */
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .button-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets/phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .button-grid {
+    grid-template-columns: 1fr; /* 1 button per row on small phones */
+  }
 }
 

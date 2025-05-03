@@ -1,6 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
 
@@ -62,12 +63,16 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+    <a
+      href="/src/class1/A01784116/menu/index.html"
+    >
+      Clases Tomas Molina
+    </a>
       <a
         href="/src/class1/A01784116/menu/index.html"
       >
         Clases Tomas Molina
         </a>
-
         <a
         href="/src/menu/A01028038/index.html"
         style={{ display: "block", marginTop: "1rem" }}
@@ -84,7 +89,6 @@ function App() {
         </a>
     </div>
   )
-
 }
 
 export default App
