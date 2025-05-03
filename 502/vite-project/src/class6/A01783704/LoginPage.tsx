@@ -1,91 +1,92 @@
-// LoginPage.tsx
-import Input from "./Input";
-import Button from "./Button";
-import { useState, useEffect } from "react";
-import { useUser } from "./UserContext";
-import type { Role } from "./UserContext";
+// src/components/LoginPage.tsx
+import React, { useState } from "react";
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [selectedRole, setSelectedRole] = useState<Role>("employee");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  const { setRole } = useUser();
+  const [success, setSuccess] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    setSuccess(false);
-    setLoading(true);
+    setSuccess("");
+
+    if (username === "admin" && password === "password") {
+      setSuccess("Login successful");
+    } else {
+      setError("Invalid username or password");
+    }
   };
-
-  useEffect(() => {
-    if (!loading) return;
-
-    const timer = setTimeout(() => {
-      if (username && password) {
-        localStorage.setItem("isAuthenticated", "true");
-        localStorage.setItem("userRole", selectedRole ?? "employee");
-        setRole(selectedRole);
-        setSuccess(true);
-        window.location.reload();
-      } else {
-        setError("Invalid credentials");
-      }
-      setLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [loading, username, password, selectedRole, setRole]);
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
-          Login
-        </h2>
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-8 rounded-lg shadow-md w-full max-w-md space-y-6"
+      >
+        <h2 className="text-2xl font-semibold text-center">Login</h2>
 
-        {error && <p className="text-red-600 text-center mb-4">{error}</p>}
-        {success && (
-          <p className="text-green-600 text-center mb-4">Login successful!</p>
+        {/* Mensaje de error */}
+        {error && (
+          <p
+            data-testid="error-msg"
+            className="text-red-600 text-center mb-4"
+          >
+            {error}
+          </p>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <Input
-            label="Username"
+        {/* Mensaje de éxito */}
+        {success && (
+          <p
+            data-testid="success-msg"
+            className="text-green-600 text-center mb-4"
+          >
+            {success}
+          </p>
+        )}
+
+        <div>
+          <label htmlFor="username" className="block mb-1">
+            Username
+          </label>
+          <input
+            id="username"
+            data-testid="username"
             name="username"
+            type="text"
             placeholder="Enter your username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            className="w-full border px-3 py-2 rounded"
           />
-          <Input
-            label="Password"
+        </div>
+
+        <div>
+          <label htmlFor="password" className="block mb-1">
+            Password
+          </label>
+          <input
+            id="password"
+            data-testid="password"
             name="password"
             type="password"
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="w-full border px-3 py-2 rounded"
           />
-          <div>
-            <label className="block text-sm font-medium mb-1">Role</label>
-            <select
-              value={selectedRole ?? "employee"}
-              onChange={(e) => setSelectedRole(e.target.value as Role)}
-              className="w-full px-3 py-2 border rounded-md"
-            >
-              <option value="employee">Employee</option>
-              <option value="manager">Manager</option>
-              <option value="admin">Admin</option>
-            </select>
-          </div>
-          <Button type="submit" disabled={loading}>
-            {loading ? "Loading…" : "Login"}
-          </Button>
-        </form>
-      </div>
+        </div>
+
+        <button
+          type="submit"
+          data-testid="login-button"
+          className="w-full bg-blue-600 text-white py-2 rounded"
+        >
+          Login
+        </button>
+      </form>
     </div>
   );
 };

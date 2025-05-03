@@ -1,7 +1,8 @@
+// src/class2/A01783637/LogInComp.tsx
 import React, { useState } from 'react';
 import InputField from './Components/InputField';
 import Button from './Components/Button';
-import "/src/App.css";
+import '/src/App.css';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -18,14 +19,16 @@ const Login: React.FC = () => {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <InputField
-          name="username" // Asegúrate de que este nombre esté bien configurado
+          name="username"
+          data-testid="username"           // Added data-testid
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
         />
         <InputField
-          name="password" // Asegúrate de que este nombre esté bien configurado
+          name="password"
+          data-testid="password"           // Added data-testid
           type="password"
           placeholder="Password"
           value={password}
