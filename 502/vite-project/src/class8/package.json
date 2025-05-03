@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -29,6 +30,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "cypress": "^14.3.2",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",

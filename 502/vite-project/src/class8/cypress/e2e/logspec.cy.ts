@@ -10,6 +10,7 @@ describe("Login Page", () => {
     cy.get('[data-testid="password"]').type("password");
     cy.get('[data-testid="login-button"]').click();
 
+    // Ahora esperamos el mensaje de éxito
     cy.get('[data-testid="success-msg"]')
       .should("be.visible")
       .and("contain.text", "Login successful");
