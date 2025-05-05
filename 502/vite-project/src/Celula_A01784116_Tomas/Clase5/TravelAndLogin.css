@@ -1,0 +1,65 @@
+/* TravelAndLogin.css */
+.app-container {
+    padding: 32px;
+    font-family: Arial, sans-serif;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto 32px;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .input-error {
+    border-color: red;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 4px;
+    font-size: 12px;
+  }
+  
+  .status-error {
+    color: red;
+    margin-top: 12px;
+  }
+  
+  .status-success {
+    color: green;
+    margin-top: 12px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
