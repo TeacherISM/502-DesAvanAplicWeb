@@ -1,5 +1,5 @@
 import LoginPage from "./LoginPage";
-import Dashboard from "./Dashboard";
+import TravelRequestForm from "./TravelRequestForm";
 
 const App = () => {
   const isAuth = localStorage.getItem("isAuthenticated") === "true";
@@ -35,18 +35,18 @@ const App = () => {
                 Class 3
               </a>
               <a
-                href="/src/class5/A01783808/index.html"
+                href="/src/class4/A01783808/index.html"
                 className="text-gray-700 hover:text-blue-600 font-medium transition"
               >
-                Class 5
+                Class 4
               </a>
             </div>
           </div>
         </div>
       </nav>
 
-      <main className="max-w-5xl mx-auto px-6 bg-gray-100 pb-24">
-        {isAuth ? <Dashboard /> : <LoginPage />}
+      <main className="max-w-5xl mx-auto px-6 bg-gray-100 pb-24 pt-24">
+        {isAuth ? <TravelRequestForm /> : <LoginPage />}
       </main>
     </div>
   );

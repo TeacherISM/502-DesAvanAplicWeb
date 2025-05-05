@@ -22,9 +22,7 @@ const LoginPage = () => {
     const timer = setTimeout(() => {
       if (username === "admin" && password === "password") {
         console.log("Login successful");
-        localStorage.setItem("isAuthenticated", "true");
         setSuccess(true);
-        window.location.reload();
       } else {
         setError("Invalid username or password");
       }
