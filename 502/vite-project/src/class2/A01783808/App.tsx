@@ -25,6 +25,18 @@ const App = () => {
               >
                 Class 3
               </a>
+              <a
+                href="/src/class4/A01783808/index.html"
+                className="text-gray-700 hover:text-blue-600 font-medium transition"
+              >
+                Class 4
+              </a>
+              <a
+                href="/src/class5/A01783808/index.html"
+                className="text-gray-700 hover:text-blue-600 font-medium transition"
+              >
+                Class 5
+              </a>
             </div>
           </div>
         </div>
