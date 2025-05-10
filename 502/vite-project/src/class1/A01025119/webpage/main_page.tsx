@@ -5,16 +5,11 @@ import LoginEx from "../../../class2/A01025119/login_exp";
 import Login from "../../../class3/A01025119/Login_page";
 import TravelRequestForm from "../../../class3/A01025119/Travel_request";
 import CustomLogin from "../../../class4/A01025119/customLogin";
-
-// ——— CLASS 5 CONTEXT IMPORTS —————————————————————————————
 import TravelRequest from "../../../class5/A01025119/TravelRequest";
-// —————————————————————————————————————————————————————————
-
-// ——— CLASS 6 CONTEXT IMPORTS —————————————————————————————
 import { UserProvider } from "../../../class6/A01025119/UserContext";
 import ContextLogin from "../../../class6/A01025119/Login";
 import ContextDashboard from "../../../class6/A01025119/Dashboard";
-// —————————————————————————————————————————————————————————
+import WebSocketDemo from "../../../class7/A01025119/webSocket";
 
 import "./main_design.css";
 import "../../../App.css";
@@ -29,7 +24,8 @@ type Page =
   | "class4"
   | "class5"
   | "class6-login"
-  | "class6-dashboard";
+  | "class6-dashboard"
+  | "class7-websocket"; // NUEVO
 
 export const A01025119 = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
@@ -50,6 +46,7 @@ export const A01025119 = () => {
           "class5",
           "class6-login",
           "class6-dashboard",
+          "class7-websocket",
         ].includes(hash)
       ) {
         setCurrentPage(hash);
@@ -100,7 +97,8 @@ export const A01025119 = () => {
             <ContextDashboard />
           </UserProvider>
         );
-
+      case "class7-websocket":
+        return <WebSocketDemo />;
       default:
         return (
           <div className="main-container">
@@ -111,35 +109,50 @@ export const A01025119 = () => {
               <li>Alberto Limon</li>
               <li>Francisco Urquizo</li>
             </ul>
-        
+
             <div className="button-grid">
               <button className="main-button" onClick={() => navigateTo("class1")}>
                 Class 1 Arrow Functions
               </button>
-        
               <button className="main-button" onClick={() => navigateTo("class2-login")}>
                 Class 2 Login
               </button>
-        
               <button className="main-button" onClick={() => navigateTo("class2-travel")}>
                 Class 2 Travel Form
               </button>
-        
               <button className="main-button" onClick={() => navigateTo("class3")}>
                 Class 3 Login Authentication
               </button>
-        
               <button className="main-button" onClick={() => navigateTo("class4")}>
                 Class 4 Custom Login
               </button>
-        
               <button className="main-button" onClick={() => navigateTo("class5")}>
                 Class 5 Custom Login
               </button>
-        
               <button className="main-button" onClick={() => navigateTo("class6-login")}>
                 Class 6: Role-Based Login
               </button>
+              <button className="main-button" onClick={() => navigateTo("class7-websocket")}>
+                Class 7: WebSocket
+              </button>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="explanation-box">
+                <h2 style={{ marginTop: 0 }}>Class 8: Testing con Jest y Cypress</h2>
+                <ul style={{ listStyleType: "disc", paddingLeft: "1.5rem", textAlign: "left" }}>
+                  <li><strong>Para ejecutar la prueba con Jest:</strong></li>
+                  <ul>
+                    <li>Ve a la carpeta <code>vite-project</code>.</li>
+                    <li>Ejecuta el comando <code>npm test</code>.</li>
+                  </ul>
+                  <li><strong>Para ejecutar la prueba con Cypress:</strong></li>
+                  <ul>
+                    <li>Ingresa a la carpeta <code>A01025119</code>, dentro de la clase 8.</li>
+                    <li>Ejecuta el comando <code>npx cypress open</code>.</li>
+                    <li>Desde la interfaz gráfica podrás visualizar y correr la prueba.</li>
+                  </ul>
+                </ul>
+              </div>
             </div>
           </div>
         );
