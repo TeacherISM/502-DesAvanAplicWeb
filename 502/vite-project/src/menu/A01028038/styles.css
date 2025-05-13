@@ -1,0 +1,83 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #43a047, #66bb6a);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+.app{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+a {
+    margin-top: 20px;
+    background: #2e7d32;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background: linear-gradient(135deg, #66bb6a, #43a047);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(67, 160, 71, 0.3);
+}
+
+a:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(67, 160, 71, 0.2);
+}
+
+h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+.matriculas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

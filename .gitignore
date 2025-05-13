@@ -1,1 +1,4 @@
 .envrc
+
+# System files
+.DS_Store

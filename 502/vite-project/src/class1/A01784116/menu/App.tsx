@@ -1,4 +1,3 @@
-
 import "/src/App.css";
 
 const App = () => {
@@ -11,6 +10,11 @@ const App = () => {
       <a href="/src/class2/A01784116/index.html">Class 2</a>
       <br />
       <a href="/src/class3/A01784116/index.html">Class 3</a>
+      <br />
+      <br />
+      <a href="/src/Celula_A01784116_Tomas/menu/index.html">
+        Menu Trabjos en Equipo
+      </a>
       <br />
       <br />
       <a href="/src/index.html">Main Menu</a>
