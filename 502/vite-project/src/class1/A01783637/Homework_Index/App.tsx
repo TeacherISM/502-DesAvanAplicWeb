@@ -24,6 +24,9 @@ const App = () => {
       <div>
         <a href="/src/class6/A01783704/index.html"> ~HomeWork6~ </a>
       </div>
+      <div>
+        <a href="/src/class7/A01783637/index.html"> ~HomeWork7~ </a>
+      </div>
     </>
   );
 };
