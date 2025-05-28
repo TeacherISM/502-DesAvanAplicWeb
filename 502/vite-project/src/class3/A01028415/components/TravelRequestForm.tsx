@@ -1,4 +1,4 @@
-import React, { useReducer, FC, ChangeEvent } from 'react'
+import { useReducer, FC, ChangeEvent } from 'react'
 
 interface TravelRequestState {
   destination: string
