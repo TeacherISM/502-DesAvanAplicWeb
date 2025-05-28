@@ -200,7 +200,7 @@ function LoginForm({ onLogin }: { onLogin: (email: string, password: string) => 
 
   return (
     <div style={styles.loginContainer}>
-      <h2 style={{ textAlign: 'center', marginBottom: '24px', color: '#1f2937' }}>Login con React Context API</h2>
+      <h2 style={{ textAlign: 'center', marginBottom: '24px', color: '#1f2937' }}>Form Handling and Validation</h2>
       <form onSubmit={handleSubmit}>
         <div style={styles.formGroup}>
           <label style={styles.label}>Email</label>
